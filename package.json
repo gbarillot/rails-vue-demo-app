@@ -1,0 +1,24 @@
+{
+  "name": "boilerplate",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.0.2",
+    "avoriaz": "^6.0.1",
+    "chai": "^4.1.2",
+    "jquery": "^3.2.1",
+    "mocha": "^4.0.1",
+    "mocha-webpack": "^1.0.1",
+    "vue": "^2.5.9",
+    "vue-i18n": "^7.3.0",
+    "vue-loader": "^13.5.0",
+    "vue-router": "^2.7.0",
+    "vue-template-compiler": "^2.5.9",
+    "vuex": "^2.4.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.5"
+  },
+  "scripts": {
+    "test": "mocha-webpack test/**/*.test.js --recursive"
+  }
+}
