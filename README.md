@@ -5,11 +5,12 @@
 Demo Single Page Application based on Ruby on Rails 5.1, using Vue.js + Vuex, compiled with Webpack.
 This App has all the basic features you need to build a real world admin with:
 
+- I18n (server side + client side)
 - Forms (with progress and error callbacks)
 - Authentication (Devise)
 - Pagination (Kaminari)
 - Dynamic search filters (Ransack)
-- Websockets powered chat (ActionCable)
+- Websockets chat (ActionCable)
 
 All of this is designed (hopefully!) with maintainability and readability in mind, slightly inspired by the Rails conventions.
 
@@ -27,6 +28,6 @@ foreman start
 
 ## Contribution
 
-As noticed in the Blog Post, I am not a "Javascript developer", so if you have updates or corrections to propose, I'm open to any contribution.
+As noticed in the Blog Post, I am not what I'd call a "Javascript developer", so if you have updates or corrections to propose, I'm open to contributions.
 
-Help and contribution in the Server Side Rendering field (SSR) are highly welcome!
+Help and contribution in the Server Side Rendering (SSR) area are highly welcome!
