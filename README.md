@@ -32,8 +32,22 @@ bundle exec rails db:seed
 foreman start
 ```
 
+## Running tests
+
+### Rails side
+
+```
+rails test
+```
+
+### JS side
+
+```
+yarn test
+```
+
 ## Contribution
 
 As noticed in the Blog Post, I am not what I'd call a "Javascript developer", so if you have updates or corrections to propose, I'm open to contributions.
 
-Help and contribution in the Server Side Rendering (SSR) area are highly welcome!
+Help and contribution in the Server Side Rendering (SSR) area, as well as Javascript testing, are highly welcome!
