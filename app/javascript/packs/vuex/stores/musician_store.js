@@ -1,5 +1,3 @@
-import helpers from '../../helpers';
-
 const MusicianStore = {
   namespaced: true,
   state: {

@@ -1,9 +1,5 @@
 const helpers = {}
 
-helpers.logger = function(e){
-  console.log(e)
-};
-
 helpers.showErrors = function(data){
   let errors = {};
 
@@ -20,15 +16,6 @@ helpers.showErrors = function(data){
     }
   }
   return errors;
-};
-
-helpers.delay = function(callback, ms) {
-  var timer;
-  timer = 0;
-  return function(callback, ms) {
-    clearTimeout(timer);
-    return timer = setTimeout(callback, ms);
-  };
 };
 
 export default helpers;
