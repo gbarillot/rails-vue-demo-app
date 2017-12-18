@@ -22,8 +22,13 @@ You can read more about the how and why I built this App here: http://www.guilla
 ```
 git clone git@github.com:gbarillot/rails-vue-demo-app.git
 cd rails-vue-demo-app
-bundle exec rake db:prepare
-bundle exec rake db:seed
+bundle exec rails db:prepare
+bundle exec rails db:seed
+```
+
+## Booting the app
+
+```
 foreman start
 ```
 
