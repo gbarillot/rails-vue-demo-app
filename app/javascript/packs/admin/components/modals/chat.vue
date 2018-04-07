@@ -40,6 +40,10 @@ export default {
     EventBus.$on('newMessage', (message) =>
       this.$store.dispatch('ChatStore/talk', message)
     );
+  },
+
+  beforeDestroy: function () {
+    EventBus.$off('newMessage')
   }
 }
 </script>
