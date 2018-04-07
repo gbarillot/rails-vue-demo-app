@@ -48,8 +48,10 @@ rails test
 yarn test
 ```
 
-## Contribution
+## Contributions
 
-As noticed in the Blog Post, I am not what I'd call a "Javascript developer", so if you have updates or corrections to propose, I'm open to contributions.
+PR and feedbacks welcome!
 
-Help and contributions in the Server Side Rendering (SSR) area, as well as Javascript testing, are highly welcome!
+## Licence
+
+MIT
