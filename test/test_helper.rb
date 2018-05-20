@@ -21,6 +21,11 @@ include Warden::Test::Helpers
 Rails.logger.level = 5
 Dir[Rails.root.join('test/support/**/*.rb')].each { |f| require f }
 
+# See https://github.com/rails/rails/issues/31324
+if ActionPack::VERSION::STRING >= "5.2.0"
+  Minitest::Rails::TestUnit = Rails::TestUnit
+end
+
 class ActiveSupport::TestCase
   extend Minitest::Spec::DSL
   include Rack::Test::Methods
