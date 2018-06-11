@@ -62,7 +62,7 @@ export default {
     destroy: function(user_id) {
       if(confirm(this.$t('confirmation'))) {
         this.$store.dispatch('MusicianStore/destroy', user_id).then(
-          response => {
+            () => {
             this.$store.dispatch('MusicianStore/index');
           }
         )

@@ -36,7 +36,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
 
   def destroy
     if @musician.destroy
-      head 200
+      head 204
     else
       render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422
     end
