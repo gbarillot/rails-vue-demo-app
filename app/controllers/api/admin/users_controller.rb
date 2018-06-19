@@ -16,7 +16,6 @@ class Api::Admin::UsersController < Api::Admin::AdminController
   end
 
   def create
-    sleep 2
     @user = User.create(user_params)
 
     if @user.errors.any?

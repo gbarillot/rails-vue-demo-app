@@ -16,7 +16,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
   end
 
   def create
-    sleep 1 # Emulate slow network so you can see button spinner in dev. mode
+    sleep 2 # DELETE ME! Dummy emulation of a slow network so you can see the spinner in dev. mode
     @musician = Musician.create(musician_params)
 
     if @musician.errors.any?
