@@ -97,7 +97,7 @@ feature "Musicians" do
         sign_in users(:admin)
         delete api_admin_musician_path(musicians(:one).id)
 
-        assert_equal 200, last_response.status
+        assert_equal 204, last_response.status
       end
     end
   end
