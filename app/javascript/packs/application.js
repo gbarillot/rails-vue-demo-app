@@ -3,7 +3,6 @@ import VueI18n from 'vue-i18n';
 import store from './vuex';
 import router from './routes.js';
 import './filters/strings.js';
-import helpers from './helpers';
 
 import NavTop from './components/shared/_nav_top';
 Vue.component('nav-top', NavTop);

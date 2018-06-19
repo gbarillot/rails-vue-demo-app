@@ -2,19 +2,14 @@ const helpers = {}
 
 helpers.showErrors = function(data){
   let errors = {};
+  const messages = data.responseJSON.errors;
 
-  if(data.responseJSON.errors){
-    var error, i, len, message, messages, msg, ref;
-    ref = data.responseJSON.errors;
-    for (error in ref) {
-      messages = ref[error];
-      for (i = 0, len = messages.length; i < len; i++) {
-        message = messages[i];
-        msg = message;
-      }
-      errors[error] = msg;
+  if(messages) {
+    for(const key in messages) {
+      errors[key] = messages[key].join(', ');
     }
   }
+
   return errors;
 };
 
