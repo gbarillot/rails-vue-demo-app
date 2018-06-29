@@ -5,7 +5,12 @@ class Api::MusiciansController < Api::ApiController
   end
 
   def show
-    @musician = Musician.find(params[:id])
+    # Render a 500 to demonstrate how the front-end handles server side errors
+    if params[:id] == "this-will-trigger-an-error"
+      render json: {success: false}, status: 500
+    else
+      @musician = Musician.find(params[:id])
+    end
   end
 
 end
