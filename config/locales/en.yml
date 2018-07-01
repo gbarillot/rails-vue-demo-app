@@ -12,6 +12,7 @@ en:
       nav:
         homepage: "Home"
         musicians: "Musicians"
+        errors: "Error pages"
       home:
         title: "This is the Home page"
         content: "Lorem ipsum dolor sit amet, you know the song..."
@@ -21,6 +22,8 @@ en:
         name: "Name"
         band: "Band"
         details: "Details about this musician:"
+      errors:
+        title: "Error pages"
     admin:
       title: "Admin"
       save: "Save"

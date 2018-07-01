@@ -12,6 +12,7 @@ fr:
       nav:
         homepage: "Accueil"
         musicians: "Musiciens"
+        errors: "Pages d'erreurs"
       home:
         title: "Ceci est la page d'accueil"
         content: "Lorem ipsum dolor sit amet, vous connaissez la chanson..."

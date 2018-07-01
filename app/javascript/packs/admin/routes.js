@@ -9,8 +9,8 @@ import UserNew from './components/users/new.vue';
 import MusicianIndex from './components/musicians/index.vue';
 import MusicianEdit from './components/musicians/edit.vue';
 import MusicianNew from './components/musicians/new.vue';
-import ErrorPage from '../components/errors/500.vue';
-import NotFound from '../components/errors/404.vue';
+import Error500 from '../components/errors/500.vue';
+import Error404 from '../components/errors/404.vue';
 
 const router = new VueRouter({
   mode: 'history',
@@ -23,8 +23,8 @@ const router = new VueRouter({
     { path: '/musicians', component: MusicianIndex, name: 'musicians_path' },
     { path: '/musicians/new', component: MusicianNew, name: 'new_musician_path' },
     { path: '/musicians/:id/edit', component: MusicianEdit, name: 'edit_musician_path' },
-    { path: '/500', component: ErrorPage },
-    { path: '/404', component: NotFound },
+    { path: '/500', component: Error500 },
+    { path: '/404', component: Error404 },
     { path: '*', redirect: '/404' }
   ]
 });

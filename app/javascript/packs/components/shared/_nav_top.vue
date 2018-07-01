@@ -14,6 +14,9 @@
         <li :class="activeOn(['musicians_path', 'musician_path'])">
           <router-link :to="{ name: 'musicians_path' }">{{ $t('nav.musicians') }}</router-link>
         </li>
+        <li :class="activeOn(['errors_path', 'errors_path'])">
+          <router-link :to="{ name: 'errors_path' }">{{ $t('nav.errors') }}</router-link>
+        </li>
       </ul>
     </div>
   </div>
