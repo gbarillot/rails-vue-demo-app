@@ -1,13 +1,20 @@
 <template>
-  <div class='container'>
-    <nav-top></nav-top>
-    <div class='row'>
-      <div class='col-xs-12'>
-        <h2>{{ $t('home.title') }}</h2>
-        <p>{{ $t('home.content') }}</p>
-        <br />
-        <a href='/admin'>{{ $t('home.admin_link') }}</a>
-      </div>
+  <layout>
+    <div class='col-xs-12'>
+      <h2>{{ $t('home.title') }}</h2>
+      <p>{{ $t('home.content') }}</p>
+      <br />
+      <a href='/admin'>{{ $t('home.admin_link') }}</a>
     </div>
-  </div>
+  </layout>
 </template>
+
+<script>
+import Layout from '../shared/layout';
+
+export default {
+  components: {
+    Layout
+  }
+}
+</script>

@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import ModalChat from '../modals/chat'
+import ModalChat from '../modals/chat';
 
 export default {
   components: {

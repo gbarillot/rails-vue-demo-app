@@ -1,30 +1,27 @@
 <template>
-  <div>
-    <nav-top></nav-top>
-    <div class='container-fluid'>
-      <div class='row'>
-        <div class='col-xs-12'>
-          <ul class='breadcrumb pull-left'>
-            <li><router-link :to="{ name: 'root_path' }">{{ $t('dashboard.title') }}</router-link>
-            <li><router-link :to="{ name: 'musicians_path' }">{{ $t('musicians.title')}}</router-link>
-            <li>{{ $t('musicians.creating_musician')}}</li>
-          </ul>
-        </div>
-        <div class='col-xs-12'>
-          <form v-on:submit.prevent="create" accept-charset="UTF-8" class="form">
-            <form-musician></form-musician>
-          </form>
-        </div>
-      </div>
+  <layout>
+    <div class='col-xs-12'>
+      <ul class='breadcrumb pull-left'>
+        <li><router-link :to="{ name: 'root_path' }">{{ $t('dashboard.title') }}</router-link>
+        <li><router-link :to="{ name: 'musicians_path' }">{{ $t('musicians.title')}}</router-link>
+        <li>{{ $t('musicians.creating_musician')}}</li>
+      </ul>
     </div>
-  </div>
+    <div class='col-xs-12'>
+      <form v-on:submit.prevent="create" accept-charset="UTF-8" class="form">
+        <form-musician></form-musician>
+      </form>
+    </div>
+  </layout>
 </template>
 
 <script>
-import FormMusician from './_form.vue'
+import Layout from '../shared/layout';
+import FormMusician from './_form.vue';
 
 export default {
   components: {
+    'layout': Layout,
     'form-musician': FormMusician
   },
 
