@@ -1,10 +1,10 @@
 import Vue from 'vue/dist/vue.esm';
 import VueI18n from 'vue-i18n';
-import store from './vuex';
-import router from './routes.js';
-import './filters/strings.js';
+import store from '../src/vuex';
+import router from '../src/routes.js';
+import '../src/filters/strings.js';
 
-import NavTop from './components/shared/_nav_top';
+import NavTop from '../src/components/shared/_nav_top';
 Vue.component('nav-top', NavTop);
 
 $.ajaxSetup({
