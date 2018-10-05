@@ -1,17 +1,17 @@
 import Vue from 'vue/dist/vue.esm';
 import VueI18n from 'vue-i18n';
-import store from './vuex';
-import router from './routes.js';
-import './filters/strings.js';
-import helpers from './helpers';
-import EventBus from './event_bus';
+import store from '../../src/admin/vuex';
+import router from '../../src/admin/routes.js';
+import '../../src/admin/filters/strings.js';
+import helpers from '../../src/admin/helpers';
+import EventBus from '../../src/admin/event_bus';
 // Expose EventBus to window for JQuery access (ActionCable)
 window.EventBus = EventBus;
 
-import NavTop from './components/shared/_nav_top';
+import NavTop from '../../src/admin/components/shared/_nav_top';
 Vue.component('nav-top', NavTop);
 
-import SubmitTag from './components/shared/_submit_tag';
+import SubmitTag from '../../src/admin/components/shared/_submit_tag';
 Vue.component('submit-tag', SubmitTag);
 
 $.ajaxSetup({
