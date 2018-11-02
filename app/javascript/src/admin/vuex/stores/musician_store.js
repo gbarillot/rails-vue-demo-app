@@ -34,7 +34,7 @@ const MusicianStore = {
   actions: {
     index(context, query) {
       $.ajax({
-        url: `musicians?${query}`,
+        url: `musicians`,
         type: 'get',
         data: query,
         success: function(data) {
