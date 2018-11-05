@@ -8,7 +8,7 @@
           </router-link>
         </li>
 
-        <li v-for="page in pagination.pages" :class="[pagination.current == page ? 'active' : '']">
+        <li v-for="page in pagination.pages" :key="page" :class="[pagination.current == page ? 'active' : '']">
           <router-link :to="{path: $route.path, query: {page: page}}" v-if="page != pagination.current && (page == 1 || page == 2 || page == 3 || page == pagination.pages || page == pagination.pages - 1 || page == pagination.pages - 2)">{{ page }}</router-link>
 
           <span v-if="page != pagination.current && page == 4">...</span>

@@ -22,7 +22,9 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ locale | uppercase }}<span class="caret"></span></a>
             <ul class="dropdown-menu locales">
-              <li v-for='loc in availableLocales' v-if='loc != locale'><a href="#" @click.prevent="setLocale(loc)">{{ loc | uppercase}}</a></li>
+              <li v-for='loc in availableLocales' v-if='loc != locale' :key="loc">
+                <a href="#" @click.prevent="setLocale(loc)">{{ loc | uppercase}}</a>
+              </li>
             </ul>
           </li>
         </ul>

@@ -22,7 +22,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for='musician in musicians'>
+          <tr v-for='musician in musicians' :key='musician.id'>
             <td><router-link :to="{ name: 'edit_musician_path', params: { id: musician.id }}">{{ musician.id }}</router-link></td>
             <td><router-link :to="{ name: 'edit_musician_path', params: { id: musician.id }}">{{ musician.name }}</router-link></td>
             <td>{{ musician.band }}</td>

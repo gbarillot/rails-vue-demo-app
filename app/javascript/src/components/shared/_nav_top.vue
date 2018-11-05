@@ -2,7 +2,9 @@
   <div class='row'>
     <div class='col-xs-12'>
       <select class="pull-right" v-model="locale" style="margin-top: 10px;">
-        <option v-for="locale in availableLocales" :value="locale">{{ locale | uppercase }}</option>
+        <option v-for="locale in availableLocales" :value="locale" :key="locale">
+          {{ locale | uppercase }}
+        </option>
       </select>
 
       <h1>{{ $t('title') }}</h1>

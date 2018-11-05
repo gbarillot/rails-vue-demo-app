@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for='user in users'>
+          <tr v-for='user in users' :key="user.id">
             <td><router-link :to="{ name: 'edit_user_path', params: { id: user.id }}">{{ user.id }}</router-link></td>
             <td><router-link :to="{ name: 'edit_user_path', params: { id: user.id }}">{{ user.created_at }}</router-link></td>
             <td><router-link :to="{ name: 'edit_user_path', params: { id: user.id }}">{{ user.email }}</router-link></td>
