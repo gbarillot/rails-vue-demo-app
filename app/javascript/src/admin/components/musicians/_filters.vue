@@ -9,7 +9,9 @@
       <div class='form-group col-md-5'>
         <label>{{ $t('activerecord.models.musician.band') }}</label>
         <select v-model="form.band_eq" class="form-control">
-          <option v-for="band in bands" :value="band.key">{{ band.name }}</option>
+          <option v-for="band in bands" :value="band.key" :key="band.key">
+            {{ band.name }}
+          </option>
         </select>
       </div>
       <div class='form-group col-md-2'>

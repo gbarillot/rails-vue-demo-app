@@ -9,7 +9,9 @@
       <label for="">{{ $t('activerecord.models.musician.band') }}</label>
       <span class='error'>{{errors.band}}</span>
       <select v-model="musician.band" class="form-control">
-        <option v-for="band in musician.bands" :value="band.key">{{ band.name }}</option>
+        <option v-for="band in musician.bands" :key="band.key" :value="band.key">
+          {{ band.name }}
+        </option>
       </select>
     </div>
     <router-link :to="{ name: 'musicians_path' }" class="btn btn-default pull-left">{{ $t('cancel')}}</router-link>

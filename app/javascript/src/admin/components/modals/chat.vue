@@ -9,7 +9,9 @@
         <div class="modal-body">
           <p>{{ $t('modals.chat.description') }}</p>
           <div class="chat">
-            <p v-for="message in messages">{{ message }}</p>
+            <p v-for="message in messages" :key="message">
+              {{ message }}
+            </p>
           </div>
           <form @submit.prevent="talk" accept-charset="UTF-8" class="form">
             <div class="form-group">
