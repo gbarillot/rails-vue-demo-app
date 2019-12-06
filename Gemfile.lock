@@ -154,7 +154,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.2)
     rack (2.0.6)
     rack-proxy (0.6.5)
       rack
@@ -274,7 +274,7 @@ DEPENDENCIES
   minitest-profiler
   minitest-rails
   minitest-rails-capybara
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.2.0)
   ransack
   route_translator
