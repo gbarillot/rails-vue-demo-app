@@ -18,5 +18,5 @@ module ApplicationHelper
       count:    collection.total_count
     }
   end
-  
+
 end

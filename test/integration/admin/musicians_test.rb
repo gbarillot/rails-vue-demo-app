@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature "Musicians" do
+describe "Musicians", :model do
 
   describe "#index" do
     it "returns a 401 when not signed in" do

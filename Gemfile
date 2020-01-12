@@ -1,18 +1,17 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+ruby '2.6.5'
 
-gem 'rails', '~> 5.2.0'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
+
 gem 'sqlite3'
-gem 'bootsnap'
-gem 'puma', '~> 3.7'
-gem 'sass-rails', '~> 5.0'
+gem 'bootsnap', '>= 1.4.2', require: false
+gem 'puma', '~> 4.1'
+gem 'sass-rails', '>= 6'
 gem 'uglifier', '>= 1.3.0'
-gem 'webpacker'
-gem 'coffee-rails', '~> 4.2'
+gem 'webpacker', '~> 4.0'
 gem 'route_translator'
 gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
@@ -38,7 +37,7 @@ group :development, :test do
   gem 'json-schema'
   gem 'warden'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 group :development do

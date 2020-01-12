@@ -2,7 +2,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
   before_action :load_musician, except: [:index, :new, :create]
 
   def index
-    @musicians = Musician.search(search_params)
+    @musicians = Musician.ransack(search_params)
                          .result
                          .page(params[:page])
                          .per(params[:per_page])
@@ -27,7 +27,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
   end
 
   def update
-    if @musician.update_attributes(musician_params)
+    if @musician.update(musician_params)
       render template: '/api/admin/musicians/edit'
     else
       render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422

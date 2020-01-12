@@ -2,7 +2,7 @@ class Api::Admin::UsersController < Api::Admin::AdminController
   before_action :load_user, except: [:index, :new, :create]
 
   def index
-    @users = User.search(search_params)
+    @users = User.ransack(search_params)
                  .result
                  .page(params[:page])
                  .per(params[:per_page])
@@ -26,7 +26,7 @@ class Api::Admin::UsersController < Api::Admin::AdminController
   end
 
   def update
-    if @user.update_attributes(user_params)
+    if @user.update(user_params)
       render template: '/api/admin/users/edit'
     else
       render json: {success: false, errors: @user.errors.messages}.to_json, status: 422
