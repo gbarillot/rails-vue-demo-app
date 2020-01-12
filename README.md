@@ -1,24 +1,57 @@
-# README
+# Rails + Webpack + Vue.js + Vuex Demo App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Demo Single Page Application based on Ruby on Rails 6.0.2, using Vue.js + Vuex, compiled with Webpack.
+All the basic features you need to build a real world app with:
 
-* Ruby version
+- Front / Admin namespaces
+- I18n (server side + client side)
+- Forms (with progress and error handling)
+- Authentication (Devise)
+- Pagination (Kaminari)
+- Dynamic search filters (Ransack)
+- Websockets chat (ActionCable)
 
-* System dependencies
+All of this is designed with maintainability and readability in mind, slightly inspired by the Rails conventions.
 
-* Configuration
+You can read more about the how and why I built this App here: http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/
 
-* Database creation
+## Installation
 
-* Database initialization
+```
+git clone git@github.com:gbarillot/rails-vue-demo-app.git
+cd rails-vue-demo-app
+bundle install
+yarn install
+bundle exec rails db:migrate
+bundle exec rails db:seed
+```
 
-* How to run the test suite
+## Booting the app
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+foreman start
+```
 
-* Deployment instructions
+## Running tests
 
-* ...
+### Rails side
+
+```
+rails test
+```
+
+### JS side
+
+```
+yarn test
+```
+
+## Contributions
+
+PR and feedbacks welcome!
+
+## Licence
+
+MIT
