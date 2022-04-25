@@ -17,11 +17,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <ul>
-            <li v-for="musician in store.musicians" :key="musician.id">
-              <router-link :to="{ name: 'musician_path', params: {id: musician.id}}">{{ musician.name }}</router-link>
-            </li>
-          </ul>
+
         </div>
       </div>
     </div>
@@ -29,17 +25,17 @@
 </template>
 
 <script>
-import { MusicianStore } from "@/stores/musician_store";
+// import { MusicianStore } from "@/stores/musician_store";
 
-export default {
-  setup() {
-    const store = MusicianStore();
+// export default {
+//   setup() {
+//     const store = MusicianStore();
 
-    return { store }
-  },
+//     return { store }
+//   },
 
-  created() {
-    this.store.index()
-  }
-}
+//   created() {
+//     //this.store.index()
+//   }
+// }
 </script>

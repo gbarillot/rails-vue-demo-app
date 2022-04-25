@@ -11,17 +11,22 @@ fr:
       title: "Front end"
       nav:
         homepage: "Accueil"
-        musicians: "Musiciens"
+        about: "A propos"
         errors: "Pages d'erreurs"
       home:
-        title: "Ceci est la page d'accueil"
-        content: "Lorem ipsum dolor sit amet, vous connaissez la chanson..."
+        title: "Musiciens"
+        breadcrumb: "Tous les musiciens"        
+      about:
+        title: "A propos"
+        content: "Lorem ipsum dolor sit amet, tu connais la chanson..."
         admin_link: "» Voulez-vous essayer la section admin ?"
       musicians:
+        title: "Details à propos de ce musicien"
         id: "Id"
         name: "Nom"
         band: "Groupe"
-        details: "Details à propos de ce musicien :"
+      errors:
+        title: "Pages d'erreurs"
     admin:
       title: "Admin"
       save: "Enregistrer"

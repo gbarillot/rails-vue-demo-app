@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Boilerplate</title>
+    <title>Boilerplate | Admin</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+    <%= csrf_meta_tags %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application' %>
-    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' %>
-    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %>
-    <%= javascript_include_tag 'application' %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
     <script type='text/javascript'>
       const translations = <%= ui_translations(:admin) %>;
     </script>
@@ -20,10 +21,9 @@
       }
     </script>
   </head>
-  <body class='admin'>
-    <div id='app'>
-      <router-view></router-view>
-    </div>
-    <%= javascript_pack_tag 'admin/application' %>
+  <body class="admin">
+    <div id="app"></div>
+
+    <%= vite_javascript_tag 'admin' %>
   </body>
 </html>
