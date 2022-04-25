@@ -2,17 +2,19 @@
 <html>
   <head>
     <title>Boilerplate</title>
+
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css' %>
     <%= stylesheet_link_tag 'application' %>
-    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' %>
-    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' %>
+    
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <script type='text/javascript'>
+    
+    <script type="text/javascript">
       const translations = <%= ui_translations(:front) %>;
     </script>
-    <script type='text/javascript'>
+
+    <script type="text/javascript">
       I18n = {
         prefix: '<%= I18n.locale == I18n.default_locale ? "" : "#{I18n.locale}/" %>',
         locale: '<%= I18n.locale %>',
@@ -20,10 +22,9 @@
       }
     </script>
   </head>
-  <body class='front'>
-    <div id='app'>
-      <router-view></router-view>
-    </div>
-    <%= javascript_pack_tag 'application' %>
+  <body class="front">
+    <div id="app"></div>
+    
+    <%= vite_javascript_tag 'application' %>
   </body>
 </html>

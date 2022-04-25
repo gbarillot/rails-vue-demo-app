@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  mount ActionCable.server => '/cable'
+  #mount ActionCable.server => '/cable'
 
   localized do
     devise_for :users, only: [:sessions]
@@ -24,5 +25,4 @@ Rails.application.routes.draw do
     root :to => "application#index"
     match "*path", to: "application#index", format: false, via: :get
   end
-
 end
