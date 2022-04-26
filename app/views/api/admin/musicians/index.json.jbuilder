@@ -11,6 +11,5 @@ json.bands Musician.bands.each do |band, key|
 end
 
 json.partial! partial: '/api/admin/shared/pagination', locals: {
-  kind: @musicians,
-  callback: 'MusicianStore/index'
+  kind: @musicians
 }

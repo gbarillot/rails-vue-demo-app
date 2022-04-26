@@ -4,14 +4,16 @@ export const MusicianStore = defineStore('musicians', {
   state: () => {
     return {
       musician: {},
-      musicians: []
+      musicians: [],
+      pagination: {}
     }
   },
 
   actions: {
-    async index() {
-      this.axios.get('/musicians').then(response => {      
-        this.musicians = response.data.musicians;
+    async index(path) {
+      this.axios.get(path).then(response => {  
+        this.pagination = response.data.pagination;    
+        this.musicians = response.data.musicians;        
       })  
     },
     async show(id) {

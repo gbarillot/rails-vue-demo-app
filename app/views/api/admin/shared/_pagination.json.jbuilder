@@ -6,5 +6,4 @@ json.pagination do
   json.per_page obj[:per_page]
   json.pages obj[:pages]
   json.count obj[:count]
-  json.callback callback
 end

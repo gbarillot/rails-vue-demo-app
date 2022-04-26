@@ -7,7 +7,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -26,13 +26,13 @@
             <b>{{ $t('musicians.band') }}:</b> {{ store.musician.band }}
           </p>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { MusicianStore } from "@/stores/musician_store";
+import { MusicianStore } from "@/admin/stores/musician_store";
 
 export default {
   setup() {
