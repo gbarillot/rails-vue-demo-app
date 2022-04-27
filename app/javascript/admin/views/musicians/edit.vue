@@ -1,40 +1,28 @@
 <template>  
-  <div class="row">
-    <div class="col-12">
-      <div class="row">
-        <div class="col-12">
-          <h1>{{ $t('home.title') }}</h1>
-        </div>
-      </div>
+  <div>
+    <div class="uk-container ">
+      <ul class="uk-breadcrumb uk-margin uk-margin-top">
+        <li><router-link :to="{ name: 'root_path' }">{{ $t('title') }}</router-link></li>
+        <li><router-link :to="{ name: 'musicians_path' }">{{ $t('nav.musicians') }}</router-link></li>
+        <li><span>{{ store.musician.name }}</span></li>
+      </ul>
 
-      <!-- <div class="row">
-        <div class="col-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><router-link :to="{ name: 'root_path' }">{{ $t('home.breadcrumb') }}</router-link></li>
-              <li class="breadcrumb-item active">{{ store.musician.name }}</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <h2>{{ $t('musicians.title') }}</h2>
-          <p>
-            <b>{{ $t('musicians.id') }}:</b> {{ store.musician.id }}<br />
-            <b>{{ $t('musicians.name') }}:</b> {{ store.musician.name }}<br /> 
-            <b>{{ $t('musicians.band') }}:</b> {{ store.musician.band }}
-          </p>
-        </div>
-      </div> -->
+      <form @submit.prevent="update" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted">
+        <MusicianForm :data="store" />       
+      </form>
     </div>
   </div>
 </template>
 
 <script>
 import { MusicianStore } from "@/admin/stores/musician_store";
+import MusicianForm from "./_form.vue";
 
 export default {
+  components: {
+    MusicianForm,
+  },
+
   setup() {
     const store = MusicianStore();
     
@@ -42,7 +30,13 @@ export default {
   },
 
   created() {
-    this.store.show(this.$route.params.id)
+    this.store.show(this.$route.path)
+  },
+
+  methods: {
+    update(form) {
+      this.$messenger.call(form, this.store.update(this.$route.path));
+    }
   }
 }
 </script>

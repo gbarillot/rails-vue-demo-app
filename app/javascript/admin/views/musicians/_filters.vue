@@ -9,7 +9,7 @@
             <input type="text" v-model="form.name_cont" class="uk-input" placeholder="name">
           </div>  
           <div class="uk-width-1-4@s">     
-            <input type="email" class="uk-input" placeholder="band">
+            <input type="text" class="uk-input" placeholder="band">
           </div> 
           <div class="uk-width-1-4@s">
             <input type="submit" class="uk-button uk-button-primary" value="Filtrer">

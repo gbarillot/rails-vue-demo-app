@@ -1,30 +1,17 @@
 <template>
-  <div class="row">
-    <div class="col-12">
-      <div class="row">
-        <div class="col-12">
-          <h1>{{ $t('home.title') }}</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">{{ $t('home.breadcrumb') }}</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <ul>
-            <li v-for="musician in store.musicians" :key="musician.id">
-              <router-link :to="{ name: 'musician_path', params: {id: musician.id}}">{{ musician.name }}</router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <div class="uk-container">
+    <h1>{{ $t('home.title') }}</h1>
+
+    <ul class="uk-breadcrumb uk-margin uk-margin-top">
+      <li class="breadcrumb-item"><span>{{ $t('home.breadcrumb') }}</span></li>
+    </ul>
+
+    <ul>
+      <li v-for="musician in store.musicians" :key="musician.id">
+        <router-link :to="{ name: 'musician_path', params: {id: musician.id}}">{{ musician.name }}</router-link>
+      </li>
+    </ul>
+
   </div>
 </template>
 

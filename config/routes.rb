@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         end
         resources :dashboard, only: :index
         resources :users, except: :show
-        resources :musicians, except: :show
+        resources :musicians, except: :edit
       end
     end
 

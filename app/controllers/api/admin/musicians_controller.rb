@@ -8,27 +8,27 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
                          .per(params[:per_page])
   end
 
-  def new
-    @musician = Musician.new
+  def show
   end
 
-  def edit
+  def new
+    @musician = Musician.new
   end
 
   def create
     sleep 2 # DELETE ME: Dummy emulation of a slow network so you can see the spinner in dev. mode
     @musician = Musician.create(musician_params)
 
-    if @musician.errors.any?
-      render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422
+    if @musician.errors.empty?
+      head :ok
     else
-      render template: '/api/admin/musicians/edit'
+      render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422      
     end
   end
 
   def update
     if @musician.update(musician_params)
-      render template: '/api/admin/musicians/edit'
+      head :ok
     else
       render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422
     end
@@ -36,7 +36,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
 
   def destroy
     if @musician.destroy
-      head 204
+      head :ok
     else
       render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422
     end

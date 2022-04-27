@@ -2,7 +2,6 @@
   <div class="uk-navbar-container">
     <nav class="uk-container">
       <div class="uk-navbar-left">
-
         <ul class="uk-navbar-nav">
           <li :class="activeOn(['root_path'])">
             <router-link :to="{name: 'root_path'}"  aria-current="page">{{ $t('nav.dashboard') }}</router-link>
@@ -17,7 +16,6 @@
             <a class="nav-link" href="#" @click.prevent="logout">{{ $t('nav.logout') }}</a>
           </li>
         </ul>
-
       </div>
     </nav>
   </div>

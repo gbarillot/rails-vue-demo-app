@@ -1,7 +1,7 @@
 <template>
-  <div class="uk-container" v-if="store.pagination.next || store.pagination.previous">
+  <div class="uk-container " v-if="store.pagination.next || store.pagination.previous">
     
-    <ul class="uk-pagination">
+    <ul class="uk-pagination uk-flex-right">
       <li>
         <router-link :to="{path: $route.path, query: setQuery(store.pagination.previous)}" v-if="store.pagination.previous">
           <span uk-pagination-previous></span>

@@ -1,22 +1,24 @@
 <template>
-  <div class="row">
-    <div class="col-8">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <router-link to="/" class="nav-link" :class="activeOn(['root_path', 'musicians_path', 'musician_path'])">{{ $t('nav.homepage') }}</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/about" class="nav-link" :class="activeOn(['about_path'])">{{ $t('nav.about') }}</router-link>
-        </li>
-      </ul>
-    </div>
-    <div class="col-4">
-      <select class="form-select float-end" v-model="locale" style="margin-top: 10px;width: 80px">
-        <option v-for="locale in availableLocales" :value="locale" :key="locale">
-          {{ locale.toUpperCase() }}
-        </option>
-      </select> 
-    </div>
+  <div class="uk-navbar-container uk-navbar-transparent">
+    <nav class="uk-container">
+      <div class="uk-navbar-left uk-column-1-3">
+        <ul class="uk-navbar-nav">
+          <li :class="activeOn(['root_path', 'musicians_path', 'musician_path'])">
+            <router-link to="/" class="nav-link" >{{ $t('nav.homepage') }}</router-link>
+          </li>
+          <li :class="activeOn(['pages_path'])">
+            <router-link :to="{name: 'pages_path'}" class="nav-link">{{ $t('nav.about') }}</router-link>
+          </li>
+          <li class="uk-offcanvas-close" style="padding-right: 20px">
+            <select class="uk-select " v-model="locale">
+              <option v-for="locale in availableLocales" :value="locale" :key="locale">
+                {{ locale.toUpperCase() }}
+              </option>
+            </select> 
+          </li>          
+        </ul>
+      </div>
+    </nav>
   </div>
 </template>
 
@@ -31,7 +33,7 @@ export default {
 
   methods: {
     activeOn(paths) {
-      return paths.includes(this.$route.name) ? 'active' : ''
+      return paths.includes(this.$route.name) ? 'uk-active' : ''
     }
   },
 

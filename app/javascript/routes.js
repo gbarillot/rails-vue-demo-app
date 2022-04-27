@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-import PageAbout from '@/views/pages/about.vue';
+import PageIndex from '@/views/pages/index.vue';
 import MusicianIndex from '@/views/musicians/index.vue';
 import MusicianShow from '@/views/musicians/show.vue';
 import Error500 from '@/views/pages/error_500.vue';
@@ -10,7 +10,7 @@ const router = createRouter({
   history: createWebHistory(`/${I18n.prefix}`),
   routes: [
     { path: '/', component: MusicianIndex, name: 'root_path' },
-    { path: '/about', component: PageAbout, name: 'about_path' },
+    { path: '/pages', component: PageIndex, name: 'pages_path' },
     { path: '/musicians', component: MusicianIndex, name: 'musicians_path' },
     { path: '/musicians/:id', component: MusicianShow, name: 'musician_path' },
     { path: '/500', component: Error500 },
