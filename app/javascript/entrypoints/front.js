@@ -18,3 +18,21 @@ createApp(Layout).use(Router)
                  .use(I18n)
                  .use(Pinia)
                  .mount('#app')
+
+Axios.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    switch (error.response.status) {
+      case 401:
+        alert("not authentified")
+        break;
+      case 500:
+        window.location.href = '/500'
+        break;
+    }
+ 
+    return Promise.reject(error);
+  }
+);

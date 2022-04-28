@@ -21,3 +21,17 @@ createApp(Layout).use(createMessenger())
                  .use(Pinia)
                  .mount('#app')
 
+Axios.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    switch (error.response.status) {
+      case 500:
+        window.location.href = '/500'
+        break;
+    }
+ 
+    return Promise.reject(error);
+  }
+);

@@ -6,11 +6,11 @@
           <li :class="activeOn(['root_path'])">
             <router-link :to="{name: 'root_path'}"  aria-current="page">{{ $t('nav.dashboard') }}</router-link>
           </li>
-          <li :class="activeOn(['musicians_path', 'musician_path'])">
+          <li :class="activeOn(['musicians_path', 'edit_musician_path', 'new_musician_path'])">
             <router-link :to="{name: 'musicians_path'}">{{ $t('nav.musicians') }}</router-link>
           </li>
           <li >
-            <a class="nav-link" href="#" @click.prevent="logout">{{ $t('nav.logout') }}</a>
+            <a class="nav-link" href="/users/sign_out">{{ $t('nav.logout') }}</a>
           </li>
         </ul>
       </div>
@@ -40,14 +40,6 @@ export default {
         redirectTo = `${this.$route.path}`
       }
       window.location.href = redirectTo;
-    },
-    logout() {
-      console.log('logout');
-      // this.$store.dispatch('NavTopStore/logout').then(
-      //   response => {
-      //     window.location.href= '/';
-      //   }
-      // );
     }
   }
 }

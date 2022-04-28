@@ -7,7 +7,7 @@
             <router-link to="/" class="nav-link" >{{ $t('nav.homepage') }}</router-link>
           </li>
           <li :class="activeOn(['pages_path'])">
-            <router-link :to="{name: 'pages_path'}" class="nav-link">{{ $t('nav.about') }}</router-link>
+            <router-link :to="{name: 'pages_path'}" class="nav-link">{{ $t('nav.pages') }}</router-link>
           </li>
           <li class="uk-offcanvas-close" style="padding-right: 20px">
             <select class="uk-select " v-model="locale">

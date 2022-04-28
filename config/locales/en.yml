@@ -11,14 +11,16 @@ en:
       title: "Front end"
       nav:
         homepage: "Home"
-        about: "About"
-        errors: "Error pages"
+        pages: "Pages"
       home:
         title: "Musicians"
         breadcrumb: "All musicians"        
-      about:
-        title: "About"
-        content: "Lorem ipsum dolor sit amet, you know the song..."
+      pages:
+        title: "Pages"
+        server_404: "This link triggers a Server side routing 404"
+        client_404: "This link triggers a Client side routing 404"
+        server_401: "This link performs an API call that responds a 401"
+        server_500: "This link performs an API call that responds a 500"
         admin_link: "» Wanna go to the admin?"
       musicians:
         title: "Details about this musician"
