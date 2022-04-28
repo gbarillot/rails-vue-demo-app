@@ -14,11 +14,10 @@ export default {
 
   watch: {
     'messages': function() { 
-      if(Object.keys(this.messages).length === 0) {
-        this.message = '';
-      } else {
-        this.message = this.messages[this.attr].join(', ');
-      }
+      this.message = '';
+      if(!!this.messages[this.attr]) {
+        this.message = this.messages[this.attr].join(',');
+      } 
     }
   }
 }

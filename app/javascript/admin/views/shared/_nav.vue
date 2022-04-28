@@ -9,9 +9,6 @@
           <li :class="activeOn(['musicians_path', 'musician_path'])">
             <router-link :to="{name: 'musicians_path'}">{{ $t('nav.musicians') }}</router-link>
           </li>
-          <li>
-            <a class="nav-link" href="#">{{ $t('nav.users') }}</a>
-          </li>
           <li >
             <a class="nav-link" href="#" @click.prevent="logout">{{ $t('nav.logout') }}</a>
           </li>

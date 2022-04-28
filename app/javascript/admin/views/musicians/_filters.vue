@@ -1,20 +1,18 @@
 <template>  
   <div class="col-12">
-    <a href="#" @click.prevent="toggleForm"><span uk-icon="icon: search; ratio: 1"></span>&nbsp;Filter</a>
+    <a href="#" @click.prevent="toggleForm"><span uk-icon="icon: search; ratio: 1"></span>&nbsp;{{ $t('filter') }}</a>
 
     <div ref="filters" class="uk-padding uk-background-muted uk-panel uk-hidden">
-      <form  @submit.prevent="search" accept-charset="UTF-8" class="uk-grid " uk-grid>
-        
-          <div class="uk-width-1-2@s">     
-            <input type="text" v-model="form.name_cont" class="uk-input" placeholder="name">
-          </div>  
-          <div class="uk-width-1-4@s">     
-            <input type="text" class="uk-input" placeholder="band">
-          </div> 
-          <div class="uk-width-1-4@s">
-            <input type="submit" class="uk-button uk-button-primary" value="Filtrer">
-          </div>
-        
+      <form @submit.prevent="search" accept-charset="UTF-8" class="uk-grid " uk-grid>        
+        <div class="uk-width-1-2@s">     
+          <input type="text" v-model="form.name_cont" class="uk-input" placeholder="name">
+        </div>  
+        <div class="uk-width-1-4@s">     
+          <input type="text" class="uk-input" placeholder="band">
+        </div> 
+        <div class="uk-width-1-4@s">
+          <input type="submit" class="uk-button uk-button-primary" value="Filtrer">
+        </div>        
       </form>
     </div>
   </div>

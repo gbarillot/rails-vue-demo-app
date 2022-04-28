@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  #mount ActionCable.server => '/cable'
-
   localized do
     devise_for :users, only: [:sessions]
 
@@ -14,8 +10,7 @@ Rails.application.routes.draw do
           delete 'sign_out', to: '/devise/sessions#destroy'
         end
         resources :dashboard, only: :index
-        resources :users, except: :show
-        resources :musicians, except: :edit
+        resources :musicians, except: :show
       end
     end
 

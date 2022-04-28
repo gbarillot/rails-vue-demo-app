@@ -13,18 +13,45 @@ export const MusicianStore = defineStore('musicians', {
   actions: {
     async index(path) {
       this.axios.get(path).then(response => {  
+        this.errors = {};
         this.pagination = response.data.pagination;    
         this.musicians = response.data.musicians;        
       })  
     },
-    async show(path) {
-      this.axios.get(path).then(response => {      
+    async new() {
+      this.errors = {}; 
+      this.axios.get(`/musicians/new`).then(response => {             
         this.musician = response.data.musician;
       })  
     },
-    async update(path) {
-      return this.axios.put(path, this.musician).then(response => {
-        this.errors = {};
+    async create() {
+      this.errors = {};
+      return this.axios.post(`/musicians`, this.musician).then(response => {        
+        this.musician = response.data.musician;
+        return true;
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+        return false;
+      }) 
+    },
+    async edit(id) {
+      this.errors = {};
+      this.axios.get(`/musicians/${id}/edit`).then(response => {             
+        this.musician = response.data.musician;
+      })  
+    },
+    async update(id) {
+      this.errors = {};
+      return this.axios.put(`/musicians/${id}`, this.musician).then(response => {        
+        return true;
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+        return false;
+      }) 
+    },
+    async destroy(id) {
+      this.errors = {};
+      return this.axios.delete(`/musicians/${id}`).then(response => {        
         return true;
       }).catch(error => {
         this.errors = error.response.data.errors;

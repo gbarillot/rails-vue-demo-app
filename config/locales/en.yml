@@ -32,37 +32,28 @@ en:
       save: "Save"
       cancel: "Cancel"
       filter: "Filter"
+      delete: "Delete"
       nav:
-        musicians: "Musicians"
         dashboard: "Dashboard"
-        users: "Users"
-        chat: "Chat"
+        musicians: "Musicians"        
         logout: "Logout"
-      modals:
-        chat:
-          description: "You can test ActionCable wired with Vue here, just open up this modal in another browser tab and your messages will be broadcasted in both sessions"
-          placeholder: "Type a message..."
       dashboard:
         title: "Dashboard"
-        musician: "Musician | Musicians"
-        user: "User | Users"
-      users:
-        title: "Users"
-        create: "+ Add a new user"
-        editing_user: "Editing user"
-        creating_user: "Creating a new user"
+        musicians: "Musicians"
       musicians:
-        title: "Musicians"
         create: "+ Add a new musician"
-        editing_musician: "Editing a musician"
-        creating_musician: "Creating a new musician"
-      confirmation: "Are you sure?"
-      activerecord:
-        models:
-          user:
-            email: "Email"
-            password: "Password"
-            password_confirmation: "Confirm password"
-          musician:
-            name: "Name"
-            band: "Band"
+        new: "New musician"
+        form:
+          id: "Id"
+          name: "Name"
+          band: "Band"
+      confirm: "Are you sure?"
+  activerecord:
+    errors:
+      models:
+        musician:
+          attributes:
+            name:
+              blank: "Mandatory field"
+            band:
+              blank: "Please select a band"
