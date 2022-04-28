@@ -8,7 +8,9 @@
           <input type="text" v-model="form.name_cont" class="uk-input" placeholder="name">
         </div>  
         <div class="uk-width-1-4@s">     
-          <input type="text" class="uk-input" placeholder="band">
+          <select v-model="form.band_eq" class="uk-select">
+            <option v-for="band in bands" :key="band.key" :value="band.key">{{ band.name }}</option>
+          </select>
         </div> 
         <div class="uk-width-1-4@s">
           <input type="submit" class="uk-button uk-button-primary" value="Filtrer">
@@ -21,10 +23,13 @@
 <script>
 
 export default {
+  props: ['bands'],
+  
   data: function() {
     return {
       form: {
-        name_cont: ''
+        name_cont: '',
+        band_eq: null
       }
     }
   },

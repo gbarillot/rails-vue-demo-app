@@ -1,5 +1,5 @@
 <template>  
-  <div>
+  <section>
     <div class="uk-container ">
       <ul class="uk-breadcrumb uk-margin uk-margin-top">
         <li><router-link :to="{ name: 'root_path' }">{{ $t('title') }}</router-link></li>
@@ -14,7 +14,7 @@
         <input type="submit" value="Save" class="uk-button uk-button-primary uk-button-large uk-margin uk-float-right" />      
       </form>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

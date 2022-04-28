@@ -6,9 +6,9 @@ Rails.application.routes.draw do
       resources :musicians, only: [:index, :show]
 
       namespace :admin do
-        as :user do
-          delete 'sign_out', to: '/devise/sessions#destroy'
-        end
+        # as :user do
+        #   delete 'sign_out', to: '/devise/sessions#destroy'
+        # end
         resources :dashboard, only: :index
         resources :musicians, except: :show
       end

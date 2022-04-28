@@ -37,11 +37,11 @@ en:
       delete: "Delete"
       nav:
         dashboard: "Dashboard"
-        musicians: "Musicians"        
+        musicians: "Musicians"     
         logout: "Logout"
       dashboard:
         title: "Dashboard"
-        musicians: "Musicians"
+        musicians: "No musician | 1 musician | musicians" 
       musicians:
         create: "+ Add a new musician"
         new: "New musician"

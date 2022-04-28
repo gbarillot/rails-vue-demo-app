@@ -9,8 +9,7 @@
     </div>
 
     <div class="uk-container uk-margin">
-      
-      <filters />
+      <filters :bands="store.bands" />
     </div>
 
     <div class="uk-container">

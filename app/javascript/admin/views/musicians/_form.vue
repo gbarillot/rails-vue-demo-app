@@ -10,7 +10,7 @@
       <label class="uk-form-label ">{{ $t('musicians.form.band') }}</label>
       <errors attr="band" :messages="data.errors" />
       <select v-model="data.musician.band" class="uk-select" :class="{'uk-form-danger': data.errors.band}">
-          <option v-for="band in data.musician.bands" :key="band.key" :value="band.key">{{ band.name }}</option>
+        <option v-for="band in data.musician.bands" :key="band.key" :value="band.key">{{ band.name }}</option>
       </select>
     </fieldset>       
   </section>
