@@ -25,6 +25,7 @@ export const MusicianStore = defineStore('musicians', {
     },
     async new() {
       this.errors = {}; 
+      this.musician = {};
       this.axios.get(`/musicians/new`).then(response => {             
         this.musician = response.data.musician;
       })  
@@ -41,8 +42,11 @@ export const MusicianStore = defineStore('musicians', {
     },
     async edit(id) {
       this.errors = {};
+      this.musician = {};
+      this.loaded = false;
       this.axios.get(`/musicians/${id}/edit`).then(response => {             
         this.musician = response.data.musician;
+        this.loaded = true;
       })  
     },
     async update(id) {
