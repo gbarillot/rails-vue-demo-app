@@ -1,6 +1,6 @@
-function Messenger() {}
+function Api() {}
 
-Messenger.prototype.call = function(e, request) {
+Api.prototype.call = function(e, request) {
   e.target.classList.add('loading');
   return new Promise((resolve) => {
     request.then((response) => {
@@ -16,11 +16,11 @@ Messenger.prototype.call = function(e, request) {
   })
 }
 
-Messenger.prototype.install = function (app) {
+Api.prototype.install = function (app) {
   app.plugin = this;
-  app.config.globalProperties.$messenger = this;
+  app.config.globalProperties.$api = this;
 }
 
-export function createMessenger(data) {
-  return new Messenger();
+export function createApi(data) {
+  return new Api();
 }

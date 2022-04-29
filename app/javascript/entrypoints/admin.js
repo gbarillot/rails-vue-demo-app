@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { createI18n } from 'vue-i18n/index'; // Need the /index to avoid warning in console
 import { createPinia } from 'pinia';
-import { createMessenger} from '@/admin/plugins/messenger'
+import { createApi } from '@/plugins/api'
 
 import Router from '@/admin/routes.js';
 import Layout from '@/admin/views/shared/layout.vue';
@@ -15,7 +15,7 @@ Pinia.use(({ store }) => { store.axios = Axios })
 
 const I18n = createI18n({locale: 'current',  messages: translations});
 
-createApp(Layout).use(createMessenger())
+createApp(Layout).use(createApi())
                  .use(Router)
                  .use(I18n)
                  .use(Pinia)

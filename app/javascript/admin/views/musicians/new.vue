@@ -38,7 +38,7 @@ export default {
 
   methods: {
     create(form) {
-      this.$messenger.call(form, this.store.create()).then(response => {
+      this.$api.call(form, this.store.create()).then(response => {
         if(response === true) {
           this.$router.push({name: 'edit_musician_path', params: {id: this.store.musician.id}})
         }

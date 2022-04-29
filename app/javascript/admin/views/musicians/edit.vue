@@ -43,11 +43,11 @@ export default {
 
   methods: {
     update(form) {
-      this.$messenger.call(form, this.store.update(this.$route.params.id));
+      this.$api.call(form, this.store.update(this.$route.params.id));
     },
     destroy(form) {
       if(confirm(this.$t('confirmation'))) {
-        this.$messenger.call(form, this.store.destroy(this.$route.params.id)).then(response => {
+        this.$api.call(form, this.store.destroy(this.$route.params.id)).then(response => {
           if(response === true) {
             this.$router.push({name: 'musicians_path'})
           } 
