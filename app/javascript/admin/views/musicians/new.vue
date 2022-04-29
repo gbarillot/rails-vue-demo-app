@@ -7,10 +7,11 @@
         <li><span>{{ $t('musicians.new') }}</span></li>
       </ul>
 
-      <form @submit.prevent="create" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted uk-clearfix">
+      <form @submit.prevent="create" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted">
         <MusicianForm :data="store" /> 
 
         <input type="submit" value="Save" class="uk-button uk-button-primary uk-button-large uk-margin uk-float-right" />      
+        <div class="clearfix"></div>
       </form>
     </div>
   </div>

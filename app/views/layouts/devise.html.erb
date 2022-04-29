@@ -4,12 +4,10 @@
     <title>Boilerplate</title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.10/dist/css/uikit.min.css" />
-    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'admin/application' %>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-  <body class='admin'>
-    <div class="container">
-      <%= yield %>
-    </div>
+  <body>
+    <%= yield %>
   </body>
 </html>
