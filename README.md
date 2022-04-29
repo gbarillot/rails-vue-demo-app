@@ -23,7 +23,7 @@ A lot of things has been updated/rewrote for this version, notably:
 - No longer depends on JQuery for API calls (replaced by Axios)
 - Vuex is now replaced by Pinia to handle state
 
-Nonetheless, a lot of opinions and conventions from the previous version remain valid, you may have a look at the original blog post for details (http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/). 
+Nonetheless, a lot of opinions and conventions from the previous version remain valid, you may have a look at the original blog post for details (https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/). 
 
 Boostrapping the pumpling for basic stuff can takes some time, but once you get the basic it's
 pretty easy to extend and to get really efficient with Vue + Rails. With this example you have 
