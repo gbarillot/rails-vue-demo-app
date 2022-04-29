@@ -1,8 +1,8 @@
-# Rails + Webpack + Vue.js + Vuex Demo App
+# Rails + Vite + Vue + Pina Demo App
 
 ## Description
 
-Demo Single Page Application based on Ruby on Rails 6.0.2, using Vue.js + Vuex, compiled with Webpack.
+Demo Single Page Application based on Ruby on Rails 7.0.2, using Vue 3 + Pina, compiled with Vite.
 All the basic features you need to build a real world app with:
 
 - Front / Admin namespaces
@@ -11,11 +11,23 @@ All the basic features you need to build a real world app with:
 - Authentication (Devise)
 - Pagination (Kaminari)
 - Dynamic search filters (Ransack)
-- Websockets chat (ActionCable)
 
 All of this is designed with maintainability and readability in mind, slightly inspired by the Rails conventions.
 
-You can read more about the how and why I built this App here: http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/
+This is the follow up of the previous Rails + Vue + Vuex app from 2017 which is still
+available on the Rails6 branch.  
+
+A lot of things has been updated/rewrote for this version, notably:
+
+- Webpacker is now replaced by Vite
+- No longer depends on JQuery for API calls (replaced by Axios)
+- Vuex is now replaced by Pinia to handle state
+
+Nonetheless, a lot of opinions and conventions from the previous version remain valid, you may have a look at the original blog post for details (http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/). 
+
+Boostrapping the pumpling for basic stuff can takes some time, but once you get the basic it's
+pretty easy to extend and to get really efficient with Vue + Rails. With this example you have 
+all you need to build up your new project in minutes.
 
 ## Installation
 
