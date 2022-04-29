@@ -35,6 +35,7 @@ end
 group :test do
   gem "capybara"
   gem 'minitest'
+  gem 'minitest-rails'
   gem 'minitest-focus'
   gem 'minitest-matchers'
   gem 'minitest-metadata'

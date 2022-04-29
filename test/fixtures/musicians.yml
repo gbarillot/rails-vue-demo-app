@@ -1,0 +1,11 @@
+one:
+  name: "foo"
+  band: "beatles"
+
+two:
+  name: "bar"
+  band: "rolling_stone"
+
+three:
+  name: "baz"
+  band: "ac_dc"
