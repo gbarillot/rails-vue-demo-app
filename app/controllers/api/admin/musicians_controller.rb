@@ -1,6 +1,6 @@
 class Api::Admin::MusiciansController < Api::Admin::AdminController
   # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
-  before_action :slow
+  before_action :slow if Rails.env == 'development'
   before_action :load_musician, except: [:index, :new, :create]  
 
   def index
