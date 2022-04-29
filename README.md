@@ -1,5 +1,7 @@
 # Rails + Webpack + Vue.js + Vuex Demo App
 
+** This branch is archived and no longer maintained. Please have a look at the main branch for an up to date version **
+
 ## Description
 
 Demo Single Page Application based on Ruby on Rails 6.0.2, using Vue.js + Vuex, compiled with Webpack.
