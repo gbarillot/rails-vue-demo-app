@@ -11,20 +11,22 @@ fr:
       title: "Front end"
       nav:
         homepage: "Accueil"
-        about: "A propos"
-        errors: "Pages d'erreurs"
+        pages: "Pages"
       home:
         title: "Musiciens"
-        breadcrumb: "Tous les musiciens"        
-      about:
-        title: "A propos"
-        content: "Lorem ipsum dolor sit amet, tu connais la chanson..."
-        admin_link: "» Voulez-vous essayer la section admin ?"
+        breadcrumb: "All musiciens"        
+      pages:
+        title: "Pages"
+        server_404: "Ce lien provoque une 404 venant du routage serveur"
+        client_404: "Ce lien provoque un 404 venant du routage côté client"
+        server_401: "Ce lien appelle l'API qui lui répond une 401"
+        server_500: "Ce lien appelle l'API qui lui répond une 500"
+        admin_link: "» Envie de voir l'admin ?"
       musicians:
-        title: "Details à propos de ce musicien"
+        title: "Details de ce musicien"
         id: "Id"
         name: "Nom"
-        band: "Groupe"
+        band: "Groupe"        
       errors:
         title: "Pages d'erreurs"
     admin:
@@ -32,37 +34,31 @@ fr:
       save: "Enregistrer"
       cancel: "Annuler"
       filter: "Filtrer"
+      reset_filters: "Reseter les filtres"
+      delete: "Supprimer"
+      no_result: "Aucun resultat :-/"
+      any: "Tous"
       nav:
-        musicians: "Musiciens"
         dashboard: "Dashboard"
-        users: "Utilisateurs"
-        chat: "Chat"
-        logout: "Déconnexion"
-      modals:
-        chat:
-          description: "Vous pouvez tester ici ActionCable couplé avec Vue, ouvrez simplement cette même modale dans un autre onglet et vos messages seront affichés dans les 2 sessions"
-          placeholder: "Tapez votre message..."
+        musicians: "Musiciens"     
+        logout: "Déconnection"
       dashboard:
         title: "Dashboard"
-        musician: "Musicien | Musiciens"
-        user: "Utilisateur | Utilisateurs"
-      users:
-        title: "Utilisateurs"
-        create: "+ Ajouter un utilisateur"
-        editing_user: "Modifier un utilisateur"
-        creating_user: "Créer un utilisateur"
+        musicians: "Aucun musician | Un musicien | musiciens" 
       musicians:
-        title: "Musiciens"
         create: "+ Ajouter un musicien"
-        editing_musician: "Modifier un musicien"
-        creating_musician: "Créer un musician"
-      confirmation: "Etes-vous certain ?"
-      activerecord:
-        models:
-          user:
-            email: "Email"
-            password: "Mot de passe"
-            password_confirmation: "Confirmer le mot de passe"
-          musician:
-            name: "Nom"
-            band: "Groupe"
+        new: "Nouveau musicien"
+        form:
+          id: "Id"
+          name: "Nom"
+          band: "Group"
+      confirm: "Etes-vous sur ?"
+  activerecord:
+    errors:
+      models:
+        musician:
+          attributes:
+            name:
+              blank: "Saisie requise"
+            band:
+              blank: "Merci de sélectionner un groupe"
