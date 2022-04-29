@@ -37,7 +37,7 @@
       <div>
         <div class="uk-card uk-card-default uk-card-large uk-card-body uk-card-hover">
           <h3 class="uk-card-title">Vite</h3>
-          <p><a href="https://vitejs.dev/" target="_blank">High performance JS compilator</a></p>
+          <p><a href="https://vitejs.dev/" target="_blank">Next generation Frontend tooling</a></p>
         </div>
       </div>
       <div>
