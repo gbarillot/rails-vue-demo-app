@@ -3,7 +3,7 @@
     <div class="uk-container ">
       <router-link :to="{name: 'new_musician_path'}" a class="uk-button uk-button-default uk-button-primary uk-float-right uk-margin-top">{{ $t('musicians.create') }}</router-link>
       <ul class="uk-breadcrumb uk-margin uk-margin-top">
-        <li><router-link :to="{ name: 'root_path' }">{{ $t('title') }}</router-link></li>
+        <li><router-link :to="{name: 'root_path'}">{{ $t('title') }}</router-link></li>
         <li><span>{{ $t('nav.musicians') }}</span></li>
       </ul>
     </div>
@@ -12,8 +12,8 @@
       <filters :bands="store.bands" />
     </div>
 
-    <div class="uk-container">
-      <table class="uk-table uk-table-divider">
+    <div v-if="store.loaded == true" class="uk-container">
+      <table v-if="store.musicians.length > 0" class="uk-table uk-table-divider">
         <thead>
           <tr>
             <th>{{ $t('musicians.form.id') }}</th>
@@ -29,6 +29,9 @@
           </tr>
         </tbody>
       </table>
+      <div v-else>
+        <h3 class="uk-text-center uk-margin-large">{{ $t('no_result') }}</h3>
+      </div>
     </div>
 
     <pagination v-if="store.pagination" :store="store" @clicked="index"></pagination>

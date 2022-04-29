@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 export const MusicianStore = defineStore('musicians', {
   state: () => {
     return {
+      loaded: false,
       errors: {},
       bands: [],
       musician: {},
@@ -13,8 +14,10 @@ export const MusicianStore = defineStore('musicians', {
 
   actions: {
     async index(path) {
+      this.loaded = false;
+      this.pagination = {};
       this.axios.get(path).then(response => {  
-        this.errors = {};
+        this.loaded = true;
         this.pagination = response.data.pagination;
         this.bands = response.data.bands;    
         this.musicians = response.data.musicians;        

@@ -1,5 +1,7 @@
 class Api::Admin::MusiciansController < Api::Admin::AdminController
-  before_action :load_musician, except: [:index, :new, :create]
+  # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
+  before_action :slow
+  before_action :load_musician, except: [:index, :new, :create]  
 
   def index
     @musicians = Musician.ransack(search_params)
@@ -13,7 +15,6 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
   end
 
   def create
-    sleep 1 # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
     @musician = Musician.create(musician_params)
 
     if @musician.errors.empty?
@@ -27,7 +28,6 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
   end
 
   def update
-    sleep 1 # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
     if @musician.update(musician_params)
       head :ok
     else
@@ -45,15 +45,18 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
 
   private
 
-    def musician_params
-      params.require(:musician).permit(
-        :name,
-        :band
-      )
-    end
+  def musician_params
+    params.require(:musician).permit(
+      :name,
+      :band
+    )
+  end
 
-    def load_musician
-      @musician = Musician.find(params[:id])
-    end
+  def load_musician
+    @musician = Musician.find(params[:id])
+  end
 
+  def slow
+    sleep 2
+  end
 end

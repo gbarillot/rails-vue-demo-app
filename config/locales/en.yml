@@ -34,7 +34,10 @@ en:
       save: "Save"
       cancel: "Cancel"
       filter: "Filter"
+      reset_filters: "Reset filters"
       delete: "Delete"
+      no_result: "No result :-/"
+      any: "Any"
       nav:
         dashboard: "Dashboard"
         musicians: "Musicians"     
