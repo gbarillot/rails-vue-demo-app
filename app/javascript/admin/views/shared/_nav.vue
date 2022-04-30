@@ -9,8 +9,11 @@
           <li :class="activeOn(['musicians_path', 'edit_musician_path', 'new_musician_path'])">
             <router-link :to="{name: 'musicians_path'}">{{ $t('nav.musicians') }}</router-link>
           </li>
+          <li :class="activeOn(['websockets_path'])">
+            <router-link :to="{name: 'websockets_path'}">{{ $t('nav.websockets') }}</router-link>
+          </li>
           <li >
-            <a class="nav-link" href="/users/sign_out">{{ $t('nav.logout') }}</a>
+            <a href="/users/sign_out">{{ $t('nav.logout') }}</a>
           </li>
         </ul>
       </div>

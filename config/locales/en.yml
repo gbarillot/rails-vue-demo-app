@@ -40,7 +40,8 @@ en:
       any: "Any"
       nav:
         dashboard: "Dashboard"
-        musicians: "Musicians"     
+        musicians: "Musicians"  
+        websockets: "Websockets"   
         logout: "Logout"
       dashboard:
         title: "Dashboard"

@@ -4,8 +4,10 @@
     "vite-plugin-ruby": "^3.0.9"
   },
   "dependencies": {
+    "@rails/actioncable": "^7.0.2-4",
     "@vitejs/plugin-vue": "^2.3.1",
     "axios": "^0.26.1",
+    "mitt": "^3.0.0",
     "pinia": "^2.0.13",
     "vue": "^3.2.33",
     "vue-axios": "^3.4.1",
