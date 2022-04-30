@@ -5,11 +5,7 @@ import Router from '@/admin/routes.js';
 import Layout from '@/admin/views/shared/layout.vue';
 
 // ActionCable setup
-import chat from '@/cable/channels/chat';
-import mitt from 'mitt';
-const emitter = mitt();
-chat(emitter);
-app.config.globalProperties.emitter = emitter;
+import { createCable } from '@/plugins/cable';
 
 // Axios base setup
 import Axios from "axios";
@@ -46,4 +42,5 @@ app.use(Router)
    .use(Pinia)
    .use(I18n)
    .use(createApi())
+   .use(createCable())
    .mount('#app')
