@@ -11,6 +11,7 @@ All the basic features you need to build a real world app with:
 - Authentication (Devise)
 - Pagination (Kaminari)
 - Dynamic search filters (Ransack)
+- Websockets (ActionCable)
 
 All of this is designed with maintainability and readability in mind, slightly inspired by the Rails conventions.
 
@@ -21,7 +22,7 @@ A lot of things has been updated/rewrote for this version, notably:
 
 - Webpacker is now replaced by Vite
 - No longer depends on JQuery for API calls (replaced by Axios)
-- Vuex is now replaced by Pinia to handle state
+- Vuex is now replaced by Pinia to handle state management
 
 Nonetheless, a lot of opinions and conventions from the previous version remain valid, you may have a look at the original blog post for details (https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/). 
 
