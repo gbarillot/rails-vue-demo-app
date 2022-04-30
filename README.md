@@ -5,13 +5,13 @@
 Demo Single Page Application based on Ruby on Rails 7.0.2, using Vue 3 + Pina, compiled with Vite.
 All the basic features you need to build a real world app with:
 
-- Front / Admin namespaces
-- I18n (server side + client side)
-- Forms (with progress and error handling)
-- Authentication (Devise)
-- Pagination (Kaminari)
-- Dynamic search filters (Ransack)
-- Websockets (ActionCable)
+- **Front / Admin namespaces**
+- **I18n** (server side + client side)
+- **Forms** (with progress and error handling)
+- **Authentication** (Devise)
+- **Pagination** (Kaminari)
+- **Dynamic search filters** (Ransack)
+- **Websockets** (ActionCable)
 
 All of this is designed with maintainability and readability in mind, slightly inspired by the Rails conventions.
 
