@@ -1,7 +1,5 @@
 <template>
-  <section>
-    <Spinner v-if="store.loaded != true" /> 
-    
+  <section>    
     <div class="uk-container " v-if="store.pagination.next || store.pagination.previous">      
       <ul class="uk-pagination uk-flex-right">
         <li>
@@ -24,19 +22,12 @@
           </router-link>
         </li>
       </ul>
-
     </div>
   </section>
 </template>
 
 <script>
-import Spinner from "@/admin/views/shared/_spinner.vue";
-
 export default {
-  components: {
-    Spinner,
-  },
-
   props: ['store'],
 
   methods: {

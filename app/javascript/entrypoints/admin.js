@@ -39,6 +39,10 @@ const I18n = createI18n({locale: 'current',  messages: translations});
 // From animations helper
 import { createApi } from '@/plugins/api';
 
+// App wide available components
+import Spinner from '@/admin/views/shared/_spinner.vue'
+app.component('spinner', Spinner);
+
 app.use(Router)
    .use(Pinia)
    .use(I18n)

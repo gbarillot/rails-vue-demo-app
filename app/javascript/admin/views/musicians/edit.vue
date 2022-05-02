@@ -7,15 +7,16 @@
         <li><span>{{ store.musician.name }}</span></li>
       </ul>
 
-      <form v-if="store.loaded === true" @submit.prevent="update" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted">
-        <MusicianForm :data="store" /> 
+      <div ref="formSection">
+        <form ref="form" @submit.prevent="update" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted">
+          <MusicianForm :data="store" /> 
 
-        <a @click="destroy" href="#" class="uk-button uk-button-danger uk-button-large uk-margin">{{ $t('delete') }}</a> 
-        <input type="submit" value="Save" class="uk-button uk-button-primary uk-button-large uk-margin uk-float-right" />      
-      </form>
-      <div v-else>
-        <Spinner />
+          <a @click="destroy" href="#" class="uk-button uk-button-danger uk-button-large uk-margin">{{ $t('delete') }}</a> 
+          <input type="submit" value="Save" class="uk-button uk-button-primary uk-button-large uk-margin uk-float-right" />      
+        </form>
       </div>
+      <spinner />
+
     </div>
   </section>
 </template>
@@ -23,12 +24,10 @@
 <script>
 import { MusicianStore } from "@/admin/stores/musician_store";
 import MusicianForm from "./_form.vue";
-import Spinner from "@/admin/views/shared/_spinner.vue";
 
 export default {
   components: {
-    MusicianForm,
-    Spinner
+    MusicianForm
   },
 
   setup() {
@@ -37,17 +36,17 @@ export default {
     return { store }
   },
 
-  created() {
-    this.store.edit(this.$route.params.id)
+  mounted() {
+    this.$api.call(this.$refs.formSection, this.store.edit(this.$route.params.id));
   },
 
   methods: {
     update(form) {
-      this.$api.call(form, this.store.update(this.$route.params.id));
+      this.$api.call(form.target, this.store.update(this.$route.params.id));
     },
-    destroy(form) {
+    destroy(e) {
       if(confirm(this.$t('confirmation'))) {
-        this.$api.call(form, this.store.destroy(this.$route.params.id)).then(response => {
+        this.$api.call(e.target.parentNode, this.store.destroy(this.$route.params.id)).then(response => {
           if(response === true) {
             this.$router.push({name: 'musicians_path'})
           } 

@@ -1,6 +1,16 @@
 .clearfix {
   clear: both;
 }
+
+.loading {
+  display: none;
+}
+.spinner {
+  display: none;
+}
+.loading + .spinner {
+  display: block;
+} 
 .spinner {
   width: 50px;
   height: 50px;
@@ -54,6 +64,9 @@ form {
     top: 0;
     right: 0;
     color: red;
+  }
+  &.loading {
+    display: block;
   }
   // Create a screen so the user cannot double submit/interact
   &.loading:after {

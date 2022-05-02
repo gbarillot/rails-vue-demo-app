@@ -3,7 +3,6 @@ import { defineStore } from 'pinia'
 export const MusicianStore = defineStore('musicians', {
   state: () => {
     return {
-      loaded: false,
       errors: {},
       bands: [],
       musician: {},
@@ -14,10 +13,7 @@ export const MusicianStore = defineStore('musicians', {
 
   actions: {
     async index(path) {
-      this.loaded = false;
-      this.pagination = {};
-      this.axios.get(path).then(response => {  
-        this.loaded = true;
+      return this.axios.get(path).then(response => {  
         this.pagination = response.data.pagination;
         this.bands = response.data.bands;    
         this.musicians = response.data.musicians;        
@@ -26,7 +22,7 @@ export const MusicianStore = defineStore('musicians', {
     async new() {
       this.errors = {}; 
       this.musician = {};
-      this.axios.get(`/musicians/new`).then(response => {             
+      return this.axios.get(`/musicians/new`).then(response => {             
         this.musician = response.data.musician;
       })  
     },
@@ -43,10 +39,8 @@ export const MusicianStore = defineStore('musicians', {
     async edit(id) {
       this.errors = {};
       this.musician = {};
-      this.loaded = false;
-      this.axios.get(`/musicians/${id}/edit`).then(response => {             
+      return this.axios.get(`/musicians/${id}/edit`).then(response => {             
         this.musician = response.data.musician;
-        this.loaded = true;
       })  
     },
     async update(id) {

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <div class="uk-container ">
       <router-link :to="{name: 'new_musician_path'}" a class="uk-button uk-button-default uk-button-primary uk-float-right uk-margin-top">{{ $t('musicians.create') }}</router-link>
       <ul class="uk-breadcrumb uk-margin uk-margin-top">
@@ -12,8 +12,8 @@
       <filters :bands="store.bands" />
     </div>
 
-    <div v-if="store.loaded == true" class="uk-container">
-      <table v-if="store.musicians.length > 0" class="uk-table uk-table-divider">
+    <div ref="listing" class="uk-container">
+      <table v-if="store.musicians && store.musicians.length > 0" class="uk-table uk-table-divider">
         <thead>
           <tr>
             <th>{{ $t('musicians.form.id') }}</th>
@@ -32,10 +32,12 @@
       <div v-else>
         <h3 class="uk-text-center uk-margin-large">{{ $t('no_result') }}</h3>
       </div>
-    </div>
 
-    <pagination v-if="store.pagination" :store="store" @clicked="index"></pagination>
-  </div>
+      <pagination v-if="store.pagination" :store="store" @clicked="index"></pagination>
+    </div>
+    <spinner />
+
+  </section>
 </template>
 
 <script>
@@ -55,13 +57,13 @@ export default {
     return { store }
   },
 
-  created() {
+  mounted() {
     this.index();
   },
 
   methods: {
     index() {
-      this.store.index(this.$route.fullPath)
+      this.$api.call(this.$refs.listing, this.store.index(this.$route.fullPath));
     }
   }
 }
