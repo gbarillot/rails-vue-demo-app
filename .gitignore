@@ -28,6 +28,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignore Redis dump
+/dump.rdb
+
 /public/packs
 /public/packs-test
 /node_modules

@@ -1,38 +1,34 @@
 import { createApp } from 'vue';
-import { createI18n } from 'vue-i18n/index'; // Need the /index to avoid warning in console
-import { createPinia } from 'pinia';
+const app = createApp(Layout);
 
 import Router from '@/routes.js';
 import Layout from '@/views/shared/layout.vue';
-
 import Axios from "axios";
-Axios.defaults.baseURL = `${window.location.protocol}/${window.I18n.prefix}api/`;
-Axios.defaults.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+// ActionCable setup
+import { createCable } from '@/plugins/cable';
+const Cable = createCable({channel: 'ChatChannel'})
+
+// From animations + Axios
+import { createApi } from '@/plugins/api';
+const Api = createApi({handler: Axios, namespace: ''});
+
+// Pinia + Axios setup
+import { createPinia } from 'pinia';
 const Pinia = createPinia();
 Pinia.use(({ store }) => { store.axios = Axios })
 
+// I18n loader
+import { createI18n } from 'vue-i18n/index'; // Need the /index to avoid warning in console
 const I18n = createI18n({locale: 'current',  messages: translations});
 
-createApp(Layout).use(Router)
-                 .use(I18n)
-                 .use(Pinia)
-                 .mount('#app')
+// App wide available components
+import Spinner from '@/admin/views/shared/_spinner.vue'
+app.component('spinner', Spinner);
 
-Axios.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  (error) => {
-    switch (error.response.status) {
-      case 401:
-        alert("not authentified")
-        break;
-      case 500:
-        window.location.href = '/500'
-        break;
-    }
- 
-    return Promise.reject(error);
-  }
-);
+app.use(Router)
+   .use(Pinia)
+   .use(I18n)
+   .use(Api)
+   .use(Cable)
+   .mount('#app')
