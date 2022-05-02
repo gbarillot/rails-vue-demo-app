@@ -6,6 +6,7 @@ import Layout from '@/admin/views/shared/layout.vue';
 
 // ActionCable setup
 import { createCable } from '@/plugins/cable';
+const cable = createCable({channel: 'ChatChannel'})
 
 // Axios base setup
 import Axios from "axios";
@@ -42,5 +43,5 @@ app.use(Router)
    .use(Pinia)
    .use(I18n)
    .use(createApi())
-   .use(createCable())
+   .use(cable)
    .mount('#app')

@@ -4,12 +4,7 @@ import mitt from 'mitt';
 const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
 const consumer = createConsumer(`${protocol}://${window.location.host}/cable`);
 const emitter = mitt();
-
-const channel = consumer.subscriptions.create({ channel: "ChatChannel" }, {
-  received(data) {    
-    emitter.emit('chat', data)
-  }
-})
+let channel = null;
 
 function Cable() {}
 
@@ -26,6 +21,12 @@ Cable.prototype.install = function(app) {
   app.config.globalProperties.$cable = this;
 }
 
-export function createCable() {
+export function createCable(options) {
+  channel = consumer.subscriptions.create({ channel: options.channel}, {
+    received(data) {    
+      emitter.emit('chat', data)
+    }
+  })
+
   return new Cable();
 }
