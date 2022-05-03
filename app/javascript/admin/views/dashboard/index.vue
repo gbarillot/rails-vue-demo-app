@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <p>&nbsp;</p>
+    <p>The whole "musicians" section is deliberatly slowed down so you can actually see the animations. Comment out the "slow" method in Api::Admin::MusiciansController to use the app at full speed</p>
   </section>
 </template>
 
