@@ -30,7 +30,7 @@ export default {
   },
 
   created() {
-    this.store.show(this.$route.params.id)
+    this.$api.call(this.store.show(this.$route.params.id));   
   }
 }
 </script>

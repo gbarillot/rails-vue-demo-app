@@ -7,7 +7,7 @@
         <li><span>{{ $t('musicians.new') }}</span></li>
       </ul>
 
-      <div ref="formSection">
+      <div ref="animation">
         <form @submit.prevent="create" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted">
           <MusicianForm :data="store" /> 
 
@@ -36,12 +36,12 @@ export default {
   },
 
   mounted() {
-    this.$api.call(this.$refs.formSection, this.store.new()) 
+    this.$api.call(this.store.new(), this.$refs.animation) 
   },
 
   methods: {
     create(form) {
-      this.$api.call(form.target, this.store.create()).then(response => {
+      this.$api.call(this.store.create(), form.target).then(response => {
         if(response === true) {
           this.$router.push({name: 'edit_musician_path', params: {id: this.store.musician.id}})
         }

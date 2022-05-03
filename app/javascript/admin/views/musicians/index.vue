@@ -63,7 +63,7 @@ export default {
 
   methods: {
     index() {
-      this.$api.call(this.$refs.listing, this.store.index(this.$route.fullPath));
+      this.$api.call(this.store.index(this.$route.fullPath), this.$refs.listing);
     }
   }
 }

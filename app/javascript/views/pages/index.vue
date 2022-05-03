@@ -24,10 +24,10 @@ export default {
 
   methods: {
     unauthorized() {
-      this.store.show('this-will-trigger-a-401')
+      this.$api.call(this.store.show('this-will-trigger-a-401'));        
     },
     crash() {
-      this.store.show('this-will-trigger-a-500')
+      this.$api.call(this.store.show('this-will-trigger-a-500')); 
     }
   }
 

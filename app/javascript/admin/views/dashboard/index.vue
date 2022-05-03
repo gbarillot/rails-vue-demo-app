@@ -100,7 +100,7 @@ export default {
   },
 
   created() {
-    this.store.index()
+    this.$api.call(this.store.index());    
   }
 }
 </script>

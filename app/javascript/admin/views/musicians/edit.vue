@@ -7,7 +7,7 @@
         <li><span>{{ store.musician.name }}</span></li>
       </ul>
 
-      <div ref="formSection">
+      <div ref="animation">
         <form ref="form" @submit.prevent="update" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted">
           <MusicianForm :data="store" /> 
 
@@ -37,16 +37,16 @@ export default {
   },
 
   mounted() {
-    this.$api.call(this.$refs.formSection, this.store.edit(this.$route.params.id));
+    this.$api.call(this.store.edit(this.$route.params.id), this.$refs.animation);
   },
 
   methods: {
     update(form) {
-      this.$api.call(form.target, this.store.update(this.$route.params.id));
+      this.$api.call(this.store.update(this.$route.params.id), form.target);
     },
     destroy(e) {
       if(confirm(this.$t('confirmation'))) {
-        this.$api.call(e.target.parentNode, this.store.destroy(this.$route.params.id)).then(response => {
+        this.$api.call(this.store.destroy(this.$route.params.id), e.target.parentNode).then(response => {
           if(response === true) {
             this.$router.push({name: 'musicians_path'})
           } 
