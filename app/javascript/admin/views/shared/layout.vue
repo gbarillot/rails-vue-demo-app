@@ -1,8 +1,8 @@
 <template>    
-  <div>
+  <section>
     <nav-bar />
     <router-view />
-  </div>
+  </section>
 </template>
 
 

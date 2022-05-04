@@ -1,0 +1,48 @@
+// A massive THANK YOU to https://github.com/stavros-liaskos
+// https://github.com/rachelandrew/cssgrid-ama/issues/127
+
+$screen_viewport_xs: 0;
+$screen_viewport_sm: 576px;
+$screen_viewport_md: 768px;
+$screen_viewport_lg: 992px;
+$screen_viewport_xl: 1200px;
+
+// Grid array (used for generating the grid)
+$grid_arr: (
+  (xs, $screen_viewport_xs), 
+  (sm, $screen_viewport_sm), 
+  (md, $screen_viewport_md), 
+  (lg, $screen_viewport_lg), 
+  (xl, $screen_viewport_xl)
+);
+
+.row {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $grid_gutter;
+}
+
+@each $label, $breakpoint, $width in $grid_arr {
+  @media (min-width: #{$breakpoint}) {
+    @for $i from 1 through $columns {
+      @for $y from 1 through $columns {
+        // Differs from bootstrap from the point that it specifies the index of a column to start
+        // example: col-start-6 col-4 (start at col 6 columns and occupy 4 columns
+        .col-start-#{$label}-#{$y}.col-#{$label}-#{$i} {
+          grid-column: #{$y} / span #{$i};
+        }
+      }
+
+      .col-#{$label}-#{$i} {
+        grid-column-start: span #{$i};
+        position: relative;
+      }
+    }
+
+    .container {
+      width: calc(#{$breakpoint} - #{$grid_gutter});
+      margin: 0 auto;
+    }
+  }
+}

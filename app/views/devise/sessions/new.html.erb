@@ -1,29 +1,28 @@
-<div class="uk-container uk-container-xsmall " uk-grid>
-    
-  <div class="uk-card uk-card-default uk-card-body uk-margin-large-top">
-    <div class="uk-card-header">
-      <h2>Log in</h2>
+<section class="container">
+  <div class="row">
+    <div class="col-xs-24 col-sm-20 col-md-12 col-start-md-7 mt-90">
+
+      <div class="card">
+        <h2>Log in</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <fieldset>
+            <%= f.label :email %><br />
+            <%= f.email_field :email, value: "admin@domain.com", autofocus: true, class: "uk-input" %>
+          </fieldset>
+
+          <fieldset>
+            <br />
+            <%= f.label :password %><br />
+            <%= f.password_field :password, value: "password", autocomplete: "off", class: "uk-input" %>
+          </fieldset>
+
+          <div class="actions">
+            <br />
+            <%= f.submit "Log in", class: "uk-button uk-button-primary" %>
+          </div>
+        <% end %>
+      </div>
+
     </div>
-    
-    <div class="uk-card-body">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <fieldset>
-          <%= f.label :email %><br />
-          <%= f.email_field :email, value: "admin@domain.com", autofocus: true, class: "uk-input" %>
-        </fieldset>
-
-        <fieldset>
-          <br />
-          <%= f.label :password %><br />
-          <%= f.password_field :password, value: "password", autocomplete: "off", class: "uk-input" %>
-        </fieldset>
-
-        <div class="actions">
-          <br />
-          <%= f.submit "Log in", class: "uk-button uk-button-primary" %>
-        </div>
-      <% end %>
-    </div>
-
   </div>
-</div>
+</section>

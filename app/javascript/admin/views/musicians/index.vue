@@ -1,19 +1,21 @@
 <template>
-  <section>
-    <div class="uk-container ">
-      <router-link :to="{name: 'new_musician_path'}" a class="uk-button uk-button-default uk-button-primary uk-float-right uk-margin-top">{{ $t('musicians.create') }}</router-link>
-      <ul class="uk-breadcrumb uk-margin uk-margin-top">
-        <li><router-link :to="{name: 'root_path'}">{{ $t('title') }}</router-link></li>
-        <li><span>{{ $t('nav.musicians') }}</span></li>
-      </ul>
+  <section class="container">
+    <div class="row">
+      <div class="col-xs-12">      
+        <ul class="breadcrumb">
+          <li><router-link :to="{name: 'root_path'}">{{ $t('title') }}</router-link></li>
+          <li>{{ $t('nav.musicians') }}</li>
+        </ul>
+      </div>
+      <div class="col-xs-12 ta-right">
+        <router-link :to="{name: 'new_musician_path'}" role="button" class="outline">{{ $t('musicians.create') }}</router-link> 
+      </div>
     </div>
 
-    <div class="uk-container uk-margin">
-      <filters :bands="store.bands" />
-    </div>
-
-    <div ref="listing" class="uk-container">
-      <table v-if="store.musicians && store.musicians.length > 0" class="uk-table uk-table-divider">
+    <filters :bands="store.bands" />
+ 
+    <div ref="listing" >
+      <table v-if="store.musicians && store.musicians.length > 0">
         <thead>
           <tr>
             <th>{{ $t('musicians.form.id') }}</th>
@@ -30,24 +32,22 @@
         </tbody>
       </table>
       <div v-else>
-        <h3 class="uk-text-center uk-margin-large">{{ $t('no_result') }}</h3>
+        <h3 class="card ta-center">{{ $t('no_result') }}</h3>
       </div>
 
       <pagination v-if="store.pagination" :store="store" @clicked="index"></pagination>
     </div>
-    <spinner />
 
+    <p>This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the "slow" method in Api::Admin::MusiciansController to use the app at full speed</p>
   </section>
 </template>
 
 <script>
 import { MusicianStore } from "@/admin/stores/musician_store";
 import Filters from './_filters.vue';
-import Pagination from '../shared/_pagination.vue';
 
 export default {
   components: {
-    Pagination,
     Filters
   },
 

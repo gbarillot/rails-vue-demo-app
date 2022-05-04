@@ -1,0 +1,58 @@
+.top-nav {
+  background-color: $accent;
+  select {
+    top: 5px;
+    right: 0;
+    position: absolute;
+    max-width: 100%;
+  }
+  ul li.active {
+    border-bottom: 1px solid $border-active;
+  }
+}
+
+.breadcrumb {
+  display: inline-block;
+  height: 40px;
+  margin: 0 auto 20px auto;
+  background-color: $accent;
+  li {
+    list-style-type: none;
+    display: inline-block;
+    padding-top: 5px;
+  }
+  li:after {
+    content: '/';
+    margin: 0 10px 0 10px;
+  }
+  li:last-child {
+    &:after {
+      content: '';
+    }
+  }
+}
+
+.card {
+  background-color: $accent;
+  padding: 20px;
+}
+
+.pagination {
+  list-style-type: none;
+  float: right;
+  padding: 0;
+  height: 40px;
+  li {
+    list-style-type: none;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+    padding: 10px;
+    margin-left: 5px;
+    a {
+      text-decoration: none !important;
+    }
+  }
+}

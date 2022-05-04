@@ -23,8 +23,8 @@ import { createI18n } from 'vue-i18n/index'; // Need the /index to avoid warning
 const I18n = createI18n({locale: 'current',  messages: translations});
 
 // App wide available components
-import Spinner from '@/admin/views/shared/_spinner.vue'
-app.component('spinner', Spinner);
+import Pagination from '@/admin/views/shared/_pagination.vue'
+app.component('pagination', Pagination);
 
 app.use(Router)
    .use(Pinia)

@@ -1,42 +1,35 @@
 <template>
-  <section class="uk-container uk-margin-top">
-
-    <ul class="uk-breadcrumb uk-margin">
+  <section class="container">
+    <ul class="breadcrumb">
       <li><router-link :to="{name: 'root_path'}">{{ $t('title') }}</router-link></li>
-      <li><span>{{ $t('nav.websockets') }}</span></li>
+      <li>{{ $t('nav.websockets') }}</li>
     </ul>
 
-    <div class="uk-child-width-1-2@m" uk-grid>
-      <div>
-        <div class="uk-card uk-card-default uk-card-large uk-card-body uk-card-hover">
-          <form @submit.prevent="publish" accept-charset="UTF-8">
-            <input type="input" v-model="message" class="uk-input" placeholder="Type in a message" />
-            <br /><br />
-            <input type="submit" value="Publish" class="uk-button uk-button-primary"/>
-          </form>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-large uk-card-body uk-card-hover uk-margin-top">
-            <p>You can also push messages here from the server using the Rails console:</p>
-            <pre class="uk-background-muted">ActionCable.server.broadcast("ChatChannel", { message: "hey!" })</pre>
-          </div>
+    <div class="row">
+      <div class="col-xs-24 col-sm-12 card">
+        <form @submit.prevent="publish" accept-charset="UTF-8">
+          <input type="input" v-model="message" placeholder="Type in a message" />
+          <br /><br />
+          <input type="submit" value="Publish" />
+        </form>
+
+        <div class="card">
+          <p>You can also push messages here from the server using the Rails console:</p>
+          <code>ActionCable.server.broadcast("ChatChannel", { message: "hey!" })</code>
         </div>
       </div>
 
-      <div>
-        <div class="uk-card uk-card-default uk-card-large uk-card-body uk-card-hover">
-          <p>All messages you type are upcased <b>server side</b> after a round trip. If you open multiple tabs, messages are broadcasted on all tabs.</p>
-          
-          <div v-if="messages.length > 0">
-            <p v-for="(mes, index) in messages" :key="index"><i>{{ mes }}</i></p>
-          </div>
-          <div v-else>
-            <p><i>Waiting for messages...</i></p>
-          </div>
+      <div class="col-xs-24 col-sm-12 card">
+        <p>All messages you type are upcased <b>server side</b> after a round trip. If you open multiple tabs, messages are broadcasted on all tabs.</p>
+        
+        <div v-if="messages.length > 0">
+          <p v-for="(mes, index) in messages" :key="index"><i>{{ mes }}</i></p>
+        </div>
+        <div v-else>
+          <p><i>Waiting for messages...</i></p>
         </div>
       </div>
     </div>
-
   </section>
 </template>
 

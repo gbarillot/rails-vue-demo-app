@@ -1,22 +1,24 @@
 <template>  
-  <section>
-    <div class="uk-container ">
-      <ul class="uk-breadcrumb uk-margin uk-margin-top">
-        <li><router-link :to="{ name: 'root_path' }">{{ $t('title') }}</router-link></li>
-        <li><router-link :to="{ name: 'musicians_path' }">{{ $t('nav.musicians') }}</router-link></li>
-        <li><span>{{ store.musician.name }}</span></li>
-      </ul>
+  <section class="container">
+    <ul class="breadcrumb">
+      <li><router-link :to="{ name: 'root_path' }">{{ $t('title') }}</router-link></li>
+      <li><router-link :to="{ name: 'musicians_path' }">{{ $t('nav.musicians') }}</router-link></li>
+      <li>{{ store.musician.name }}</li>
+    </ul>
 
-      <div ref="animation">
-        <form ref="form" @submit.prevent="update" accept-charset="UTF-8" class="uk-form-stacked uk-padding-large uk-background-muted">
-          <MusicianForm :data="store" /> 
+    <div ref="animation">
+      <form ref="form" @submit.prevent="update" accept-charset="UTF-8" class="card">
+        <MusicianForm :data="store" /> 
 
-          <a @click="destroy" href="#" class="uk-button uk-button-danger uk-button-large uk-margin">{{ $t('delete') }}</a> 
-          <input type="submit" value="Save" class="uk-button uk-button-primary uk-button-large uk-margin uk-float-right" />      
-        </form>
-      </div>
-      <spinner />
-
+        <div class="row">
+          <div class="col-sm-4 secondary outline">
+            <a @click="destroy" href="#" role="button" class="secondary outline">{{ $t('delete') }}</a> 
+          </div>
+          <div class="col-sm-4 col-start-sm-21 ta-right">
+            <input type="submit" :value="$t('save')" />      
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 </template>
@@ -44,9 +46,9 @@ export default {
     update(form) {
       this.$api.call(this.store.update(this.$route.params.id), form.target);
     },
-    destroy(e) {
-      if(confirm(this.$t('confirmation'))) {
-        this.$api.call(this.store.destroy(this.$route.params.id), e.target.parentNode).then(response => {
+    destroy() {
+      if(confirm(this.$t('confirm'))) {
+        this.$api.call(this.store.destroy(this.$route.params.id), this.$refs.animation).then(response => {
           if(response === true) {
             this.$router.push({name: 'musicians_path'})
           } 

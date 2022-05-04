@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-container">
+  <section class="container">
     <h1>{{ $t('pages.title') }}</h1>
 
     <p><a href="/dead-link">{{ $t('pages.server_404') }}</a></p>
@@ -8,7 +8,7 @@
     <p><a @click.prevent="crash" href="#">{{ $t('pages.server_500') }}</a></p>
     <br />
     <p><a href="/admin">{{ $t('pages.admin_link') }}</a></p>
-  </div>
+  </section>
 </template>
 
 

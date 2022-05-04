@@ -1,25 +1,29 @@
 <template>
-  <div class="uk-navbar-container uk-navbar-transparent">
-    <nav class="uk-container">
-      <div class="uk-navbar-left uk-column-1-3">
-        <ul class="uk-navbar-nav">
-          <li :class="activeOn(['root_path', 'musicians_path', 'musician_path'])">
-            <router-link to="/" class="nav-link" >{{ $t('nav.homepage') }}</router-link>
-          </li>
-          <li :class="activeOn(['pages_path'])">
-            <router-link :to="{name: 'pages_path'}" class="nav-link">{{ $t('nav.pages') }}</router-link>
-          </li>
-          <li class="uk-offcanvas-close" style="padding-right: 20px">
-            <select class="uk-select " v-model="locale">
-              <option v-for="locale in availableLocales" :value="locale" :key="locale">
-                {{ locale.toUpperCase() }}
-              </option>
-            </select> 
-          </li>          
-        </ul>
+  <section class="top-nav">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-16 col-lg-21">
+          <nav>
+            <ul>
+              <li :class="activeOn(['root_path', 'musicians_path', 'musician_path'])">
+                <router-link to="/" >{{ $t('nav.homepage') }}</router-link>
+              </li>
+              <li :class="activeOn(['pages_path'])">
+                <router-link :to="{name: 'pages_path'}">{{ $t('nav.pages') }}</router-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-md-8 col-lg-3">
+          <select v-model="locale">
+            <option v-for="locale in availableLocales" :value="locale" :key="locale">
+              {{ locale.toUpperCase() }}
+            </option>
+          </select> 
+        </div>
       </div>
-    </nav>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -33,7 +37,7 @@ export default {
 
   methods: {
     activeOn(paths) {
-      return paths.includes(this.$route.name) ? 'uk-active' : ''
+      return paths.includes(this.$route.name) ? 'active' : ''
     }
   },
 
