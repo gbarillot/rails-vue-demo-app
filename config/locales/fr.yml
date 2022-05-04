@@ -14,7 +14,7 @@ fr:
         pages: "Pages"
       home:
         title: "Musiciens"
-        breadcrumb: "All musiciens"        
+        breadcrumb: "Tous les musiciens"        
       pages:
         title: "Pages"
         server_404: "Ce lien provoque une 404 venant du routage serveur"
@@ -23,7 +23,7 @@ fr:
         server_500: "Ce lien appelle l'API qui lui répond une 500"
         admin_link: "» Envie de voir l'admin ?"
       musicians:
-        title: "Details de ce musicien"
+        title: "Details concernant ce musicien"
         id: "Id"
         name: "Nom"
         band: "Groupe"        
@@ -40,7 +40,8 @@ fr:
       any: "Tous"
       nav:
         dashboard: "Dashboard"
-        musicians: "Musiciens"     
+        musicians: "Musiciens"
+        websockets: "Websockets"      
         logout: "Déconnection"
       dashboard:
         title: "Dashboard"
@@ -51,7 +52,7 @@ fr:
         form:
           id: "Id"
           name: "Nom"
-          band: "Group"
+          band: "Groupe"
       confirm: "Etes-vous sur ?"
   activerecord:
     errors:
