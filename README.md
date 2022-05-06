@@ -27,7 +27,7 @@ A lot of things has been updated/rewrote for this version, notably:
 
 Nonetheless, a lot of opinions and conventions from the previous version remain valid, you may have a look at the original blog post for details (https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/). 
 
-Boostrapping the plumbing for basic stuff can takes some time, but once you get the basic it's
+Boostrapping the plumbing for basic stuff can take some time, but once you get the basic it's
 pretty easy to extend and to get really efficient with Vue + Rails. With this example you have 
 all you need to build up your new project in minutes.
 
