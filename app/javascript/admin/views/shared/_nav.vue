@@ -20,6 +20,13 @@
             </ul>
           </nav>
         </div>
+        <div class="col-md-8 col-lg-3">
+          <select v-model="locale">
+            <option v-for="locale in availableLocales" :value="locale" :key="locale">
+              {{ locale.toUpperCase() }}
+            </option>
+          </select> 
+        </div>
       </div>
     </div>
   </section>

@@ -50,8 +50,8 @@
         <p><a href="https://github.com/activerecord-hackery/ransack" target="_blank">ActiveRecord wizardry for dynamic search filters</a></p>
       </div>
       <div class="col-xs-24 col-md-6 card">
-        <h3>UIKit</h3>
-        <p><a href="https://getuikit.com/docs/introduction" target="_blank">Gorgeous CSS out of the box</a></p>
+        <h3>Bootstrap grid</h3>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">... but using native CSS Grid layout</a></p>
       </div>
     </div>
   </section>

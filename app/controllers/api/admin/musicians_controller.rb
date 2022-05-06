@@ -57,6 +57,6 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
   end
 
   def slow
-    sleep 2
+    sleep 1
   end
 end
