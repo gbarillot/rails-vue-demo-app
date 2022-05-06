@@ -34,7 +34,7 @@
         <p><a href="https://kazupon.github.io/vue-i18n/" target="_blank">
           {{ $tc('dashboard.musicians', 0) }}, 
           {{ $tc('dashboard.musicians', 1) }}, 
-          {{ store.metrics.musicians + ' ' + $tc('dashboard.musicians', 14) }}</a>
+          {{ store.metrics.musicians + ' ' + $tc('dashboard.musicians', store.metrics.musicians) }}</a>
         </p>
       </div>
       <div class="col-xs-24 col-md-6 card">
