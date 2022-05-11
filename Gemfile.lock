@@ -295,7 +295,7 @@ DEPENDENCIES
   minitest-profiler
   minitest-rails
   puma (~> 5.0)
-  rails (~> 7.0.2, >= 7.0.2.3)
+  rails (~> 7.0.2)
   ransack
   redis (~> 4.0)
   route_translator
