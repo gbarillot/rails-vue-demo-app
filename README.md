@@ -48,6 +48,8 @@ bundle exec rails db:seed
 foreman start
 ```
 
+Hot Module Reloading (HMR) is enabled by default. If you prefer to turn it off, set "hmr" to false 
+in /vite.config.ts.
 ## Running tests
 
 ### Rails side
