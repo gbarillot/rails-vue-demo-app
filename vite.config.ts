@@ -9,6 +9,6 @@ export default defineConfig({
     vue()
   ],
   server: {
-    hmr: false
+    hmr: true
   },
 })
