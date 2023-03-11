@@ -85,7 +85,6 @@ describe Api::Admin::MusiciansController do
 
       _(response.status).must_equal 422
       _(json_response).must_equal ({
-        "success"=>false, 
         "errors"=>{
           "name"=>[I18n.t('activerecord.errors.models.musician.attributes.name.blank')]
         }

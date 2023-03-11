@@ -20,7 +20,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
     if @musician.errors.empty?
       render template: '/api/admin/musicians/edit'
     else
-      render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422      
+      render json: {errors: @musician.errors.messages}.to_json, status: 422      
     end
   end
 
@@ -31,7 +31,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
     if @musician.update(musician_params)
       head :ok
     else
-      render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422
+      render json: {errors: @musician.errors.messages}.to_json, status: 422
     end
   end
 
@@ -39,7 +39,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
     if @musician.destroy    
       head :ok
     else
-      render json: {success: false, errors: @musician.errors.messages}.to_json, status: 422
+      render json: {errors: @musician.errors.messages}.to_json, status: 422
     end
   end
 
