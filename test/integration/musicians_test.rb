@@ -5,8 +5,8 @@ describe Api::MusiciansController do
     it "returns all musicians" do
       get api_musicians_path
 
-      assert_equal 3, json_response['musicians'].length
-      assert_equal "baz", json_response['musicians'][0]['name']
+      _(json_response['musicians'].length).must_equal 3
+      _(json_response['musicians'][0]['name']).must_equal "baz"
     end
   end
 
@@ -14,8 +14,8 @@ describe Api::MusiciansController do
     it "returns a musician" do
       get api_musician_path(musicians(:one).id)
 
-      assert_equal 200, response.status
-      assert_equal "foo", json_response['musician']['name']
+      _(response.status).must_equal 200
+      _(json_response['musician']['name']).must_equal "foo"
     end
   end
 end

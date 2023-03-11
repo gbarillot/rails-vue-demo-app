@@ -1,20 +1,19 @@
 require 'test_helper'
 
 describe Api::Admin::MusiciansController do
-
   describe "#index" do
     it "returns a 401 when not signed in" do
       get api_admin_musicians_path
 
-      assert_equal 401, response.status
+      _(response.status).must_equal 401
     end
 
     it "returns all musicians when signed in" do
       sign_in users(:admin)
       get api_admin_musicians_path
 
-      assert_equal 3, json_response['musicians'].length
-      assert_equal "baz", json_response['musicians'][0]['name']
+      _(json_response['musicians'].length).must_equal 3
+      _(json_response['musicians'][0]['name']).must_equal "baz"
     end
   end
 
@@ -26,9 +25,9 @@ describe Api::Admin::MusiciansController do
     it "returns an initialized musician" do
       get new_api_admin_musician_path
 
-      assert_equal 200, response.status
-      assert_nil json_response['musician']['name']
-      assert_nil json_response['musician']['band']
+      _(response.status).must_equal 200
+      _(json_response['musician']['name']).must_be_nil
+      _(json_response['musician']['band']).must_be_nil
     end
   end
 
@@ -45,8 +44,8 @@ describe Api::Admin::MusiciansController do
         }
       }
 
-      assert_equal 200, response.status
-      assert_equal "new test musician", json_response['musician']['name']
+      _(response.status).must_equal 200
+      _(json_response['musician']['name']).must_equal "new test musician"
     end
   end
 
@@ -55,8 +54,8 @@ describe Api::Admin::MusiciansController do
       sign_in users(:admin)
       get edit_api_admin_musician_path(musicians(:one).id)
 
-      assert_equal 200, response.status
-      assert_equal "foo", json_response['musician']['name']
+      _(response.status).must_equal 200
+      _(json_response['musician']['name']).must_equal "foo"
     end
   end
 
@@ -73,7 +72,7 @@ describe Api::Admin::MusiciansController do
         }
       }
 
-      assert_equal 200, response.status
+      _(response.status).must_equal 200
     end
 
     it "returns validation errors when musician is not valid" do
@@ -83,10 +82,14 @@ describe Api::Admin::MusiciansController do
           "band"=>"beatles"
         }
       }
-      out = {"success"=>false, "errors"=>{"name"=>[I18n.t('activerecord.errors.models.musician.attributes.name.blank')]}}
 
-      assert_equal 422, response.status
-      assert_equal out, json_response
+      _(response.status).must_equal 422
+      _(json_response).must_equal ({
+        "success"=>false, 
+        "errors"=>{
+          "name"=>[I18n.t('activerecord.errors.models.musician.attributes.name.blank')]
+        }
+      })
     end
   end
 
@@ -96,7 +99,7 @@ describe Api::Admin::MusiciansController do
         sign_in users(:admin)
         delete api_admin_musician_path(musicians(:one).id)
 
-        assert_equal 200, response.status
+        _(response.status).must_equal 200
       end
     end
   end
