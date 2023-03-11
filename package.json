@@ -1,7 +1,7 @@
 {
   "devDependencies": {
-    "vite": "^2.9.5",
-    "vite-plugin-ruby": "^3.0.9"
+    "vite": "^4.0.0",
+    "vite-plugin-ruby": "^3.1.2"
   },
   "dependencies": {
     "@rails/actioncable": "^7.0.2-4",
