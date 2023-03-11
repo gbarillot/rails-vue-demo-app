@@ -1,7 +1,6 @@
 require 'test_helper'
 
 describe Api::MusiciansController do
-
   describe "#index" do
     it "returns all musicians" do
       get api_musicians_path
@@ -19,5 +18,4 @@ describe Api::MusiciansController do
       assert_equal "foo", json_response['musician']['name']
     end
   end
-
 end
