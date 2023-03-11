@@ -9,7 +9,7 @@ import Axios from "axios";
 import { createCable } from '@/plugins/cable';
 const Cable = createCable({channel: 'ChatChannel'})
 
-// From animations + Axios wrapper
+// Form animations + Axios wrapper
 import { createApi } from '@/plugins/api';
 const Api = createApi({handler: Axios, namespace: '/admin'});
 
