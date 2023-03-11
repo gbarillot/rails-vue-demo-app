@@ -19,7 +19,7 @@ const Pinia = createPinia();
 Pinia.use(({ store }) => { store.axios = Axios })
 
 // I18n loader
-import { createI18n } from 'vue-i18n/index'; // Need the /index to avoid warning in console
+import { createI18n } from 'vue-i18n';
 const I18n = createI18n({locale: 'current',  messages: translations});
 
 // App wide available components
