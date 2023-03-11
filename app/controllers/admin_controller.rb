@@ -4,5 +4,4 @@ class AdminController < ApplicationController
   def index
     render template: 'admin'
   end
-
 end
