@@ -1,0 +1,21 @@
+{
+  "_vue-i18n-6b73e0ca.js": {
+    "file": "assets/vue-i18n-6b73e0ca.js"
+  },
+  "entrypoints/admin.js": {
+    "file": "assets/admin-ebb17751.js",
+    "imports": [
+      "_vue-i18n-6b73e0ca.js"
+    ],
+    "isEntry": true,
+    "src": "entrypoints/admin.js"
+  },
+  "entrypoints/front.js": {
+    "file": "assets/front-f6acb49a.js",
+    "imports": [
+      "_vue-i18n-6b73e0ca.js"
+    ],
+    "isEntry": true,
+    "src": "entrypoints/front.js"
+  }
+}

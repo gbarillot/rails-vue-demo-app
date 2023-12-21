@@ -20,33 +20,16 @@
   </section>
 </template>
 
-<script>
-import { MusicianStore } from "@/admin/stores/musician_store";
+<script setup>
 import MusicianForm from "./_form.vue";
+const store = MusicianStore();
+const location = useRoute();
 
-export default {
-  components: {
-    MusicianForm,
-  },
+const create = (event => {
+  store.create(location.params.id);
+});
 
-  setup() {
-    const store = MusicianStore();
-    
-    return { store }
-  },
-
-  mounted() {
-    this.$api.call(this.store.new(), this.$refs.animation) 
-  },
-
-  methods: {
-    create(form) {
-      this.$api.call(this.store.create(), form.target).then(response => {
-        if(response === true) {
-          this.$router.push({name: 'edit_musician_path', params: {id: this.store.musician.id}})
-        }
-      })
-    }
-  }
-}
+onMounted(() => {
+  store.new(location.params.id)
+});
 </script>

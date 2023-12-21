@@ -42,29 +42,18 @@
   </section>
 </template>
 
-<script>
-import { MusicianStore } from "@/admin/stores/musician_store";
-import Filters from './_filters.vue';
+<script setup>
+  import Filters from './_filters.vue';
 
-export default {
-  components: {
-    Filters
-  },
+  const store = MusicianStore();
+  const location = useRoute();
+  const { t } = useI18n({})
 
-  setup() {
-    const store = MusicianStore();
+  const index = (event => {
+    store.index(location.fullPath)
+  });
 
-    return { store }
-  },
-
-  mounted() {
-    this.index();
-  },
-
-  methods: {
-    index() {
-      this.$api.call(this.store.index(this.$route.fullPath), this.$refs.listing);
-    }
-  }
-}
+  onMounted(() => {
+    index(); 
+  });
 </script>

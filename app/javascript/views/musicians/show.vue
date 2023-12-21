@@ -16,18 +16,11 @@
   </section>
 </template>
 
-<script>
-import { MusicianStore } from "@/stores/musician_store";
+<script setup>
+  const store = MusicianStore();
+  const location = useRoute();
 
-export default {
-  setup() {
-    const store = MusicianStore();
-    
-    return { store }
-  },
-
-  created() {
-    this.$api.call(this.store.show(this.$route.params.id));   
-  }
-}
+  onMounted(() => {
+    store.show(location.params.id)
+  });
 </script>

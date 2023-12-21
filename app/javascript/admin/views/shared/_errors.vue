@@ -2,23 +2,10 @@
   <span class="error" v-if="message != ''">{{ message }}</span>
 </template>
 
-<script>
-export default {
-  props: ['attr', 'messages'],
+<script setup>
+const props = defineProps(['attr', 'messages'])
 
-  data() {
-    return {
-      message: ''
-    }
-  },
-
-  watch: {
-    'messages': function() { 
-      this.message = '';
-      if(!!this.messages[this.attr]) {
-        this.message = this.messages[this.attr].join(',');
-      } 
-    }
-  }
-}
+const message = computed(() => {
+  return !!props.messages[props.attr] ? props.messages[props.attr].join(',') : ''
+})
 </script>

@@ -14,18 +14,10 @@
   </section>
 </template>
 
-<script>
-import { MusicianStore } from "@/stores/musician_store";
+<script setup>  
+  const store = MusicianStore();
 
-export default {
-  setup() {
-    const store = MusicianStore();
-
-    return { store }
-  },
-
-  created() {
-    this.$api.call(this.store.index());    
-  }
-}
+  onMounted(() => {
+    store.index()
+  });
 </script>

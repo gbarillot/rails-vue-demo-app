@@ -29,38 +29,33 @@
   </section>
 </template>
 
-<script>
+<script setup>
+const location = useRoute();
+const router = useRouter();
+const props = defineProps(['bands']);
+const filters = ref(null);
 
-export default {
-  props: ['bands'],
-  
-  data: function() {
-    return {
-      form: {
-        name_cont: '',
-        band_eq: null
-      }
-    }
-  },
+const form = () => {
+  return {
+    name_cont: '',
+    band_eq: null
+  } 
+}
 
-  methods: {
-    toggleForm() {
-      this.$refs.filters.classList.toggle('hidden');
-    },
-    search() {
-      const query = Object.fromEntries(
-        Object.entries(this.form).map(entry => [`q[${entry[0]}]`, entry[1]])
-      );
-      this.$router.push({path: this.$route.path, query: query});
-      this.$emit('index');
-    },
-    reset() {
-      this.form = {
-        name_cont: '',
-        band_eq: null
-      }
-      this.$router.push({path: this.$route.path, query: ''})
-    },
-  }
+const toggleForm = () => {
+  filters.value.classList.toggle('hidden');
+}
+
+const search = () => {
+  const query = Object.fromEntries(
+    Object.entries(form).map(entry => [`q[${entry[0]}]`, entry[1]])
+  );
+  router.push({path: location.path, query: query});
+}
+
+const reset = () => {
+  form.name_cont = '';
+  form.band_eq = null;
+  router.push({path: location.path, query: ''})
 }
 </script>

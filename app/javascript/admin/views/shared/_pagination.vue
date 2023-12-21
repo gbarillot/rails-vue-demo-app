@@ -26,23 +26,18 @@
   </section>
 </template>
 
-<script>
-export default {
-  props: ['store'],
+<script setup>
+const clickEvent = defineEmits(['clicked'])
+const location = useRoute();
+const props = defineProps(['store']);
 
-  methods: {
-    setQuery(page) {
-      let query = JSON.parse(JSON.stringify(this.$route.query));
-      query['page'] = page;
+watch(() => location.query, () => {
+  clickEvent('clicked', true);
+});
 
-      return query;
-    }
-  },
-
-  watch: {
-    '$route.query': function() {   
-      this.$emit('clicked');  
-    }
-  }
+const setQuery = (page) => {
+  const query = JSON.parse(JSON.stringify(location.query));
+  query['page'] = page;
+  return query;
 }
 </script>

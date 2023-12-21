@@ -9,7 +9,7 @@ export const DashboardStore = defineStore('dashboard', {
 
   actions: {
     async index() {
-      this.axios.get('/dashboard').then(response => {    
+      return this.Bpi.get('/dashboard').then(response => {    
         this.metrics = response.data.metrics;        
       })  
     }

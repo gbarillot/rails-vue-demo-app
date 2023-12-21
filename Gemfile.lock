@@ -87,6 +87,9 @@ GEM
       mail
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    cypress-rails (0.6.1)
+      puma (>= 3.8.0)
+      railties (>= 5.2.0)
     date (3.3.3)
     debug (1.7.1)
       irb (>= 1.5.0)
@@ -276,6 +279,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-23
   x86_64-darwin-20
   x86_64-linux
 
@@ -283,6 +287,7 @@ DEPENDENCIES
   bootsnap
   capybara
   capybara-email
+  cypress-rails
   debug
   devise
   foreman
@@ -304,7 +309,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sprockets-rails
-  sqlite3 (~> 1.4)
+  sqlite3
   tzinfo-data
   vite_rails
   warden

@@ -1,6 +1,7 @@
 function Api() {}
 
 Api.prototype.call = function(request, e) {
+  console.log('CALL')
   let has_animation = null;
   try {
     e.classList.add('loading');

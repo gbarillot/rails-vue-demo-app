@@ -6,55 +6,43 @@
       <li>{{ store.musician.name }}</li>
     </ul>
 
-    <div ref="animation">
-      <form ref="form" @submit.prevent="update" accept-charset="UTF-8" class="card">
-        <MusicianForm :data="store" /> 
+    <form @submit.prevent="update" class="card" :class="store.progress">
+      <MusicianForm :data="store" /> 
 
-        <div class="row">
-          <div class="col-sm-4 secondary outline">
-            <a @click="destroy" href="#" role="button" class="secondary outline">{{ $t('delete') }}</a> 
-          </div>
-          <div class="col-sm-4 col-start-sm-21 ta-right">
-            <input type="submit" :value="$t('save')" />      
-          </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <a @click="destroy" href="#" role="button" class="secondary outline">{{ $t('delete') }}</a> 
         </div>
-      </form>
-    </div>
+        <div class="col-sm-4 col-start-sm-21">
+          <input type="submit" :value="$t('save')" />      
+        </div>
+      </div>
+    </form>
+  
   </section>
 </template>
 
-<script>
-import { MusicianStore } from "@/admin/stores/musician_store";
+<script setup>
+const router = useRouter();
+const location = useRoute();
+const { t } = useI18n({});
+
 import MusicianForm from "./_form.vue";
+const store = MusicianStore();
 
-export default {
-  components: {
-    MusicianForm
-  },
+const update = (event => {
+  store.update(location.params.id);
+});
 
-  setup() {
-    const store = MusicianStore();
-    
-    return { store }
-  },
+const destroy = (event => {
+  if(confirm(t('confirm'))) {
+    store.destroy(location.params.id).then(response => {
+      router.push({name: 'musicians_path'});
+    })
+  }  
+});
 
-  mounted() {
-    this.$api.call(this.store.edit(this.$route.params.id), this.$refs.animation);
-  },
-
-  methods: {
-    update(form) {
-      this.$api.call(this.store.update(this.$route.params.id), form.target);
-    },
-    destroy() {
-      if(confirm(this.$t('confirm'))) {
-        this.$api.call(this.store.destroy(this.$route.params.id), this.$refs.animation).then(response => {
-          if(response === true) {
-            this.$router.push({name: 'musicians_path'})
-          } 
-        })
-      }      
-    }
-  }
-}
+onMounted(() => {
+  store.edit(location.params.id)
+});
 </script>
