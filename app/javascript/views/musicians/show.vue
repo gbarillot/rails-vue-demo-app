@@ -17,10 +17,11 @@
 </template>
 
 <script setup>
-  const store = MusicianStore();
-  const location = useRoute();
+import { MusicianStore } from "@/stores/musician_store.js";
+const store = MusicianStore();
+const location = useRoute();
 
-  onMounted(() => {
-    store.show(location.params.id)
-  });
+onMounted(() => {
+  store.show(location.params.id)
+});
 </script>

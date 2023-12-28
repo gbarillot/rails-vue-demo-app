@@ -15,6 +15,6 @@
 </template>
 
 <script setup>
-import Errors from "../shared/_errors.vue";
+import errors from "../shared/_errors.vue";
 defineProps(['data'])
 </script>

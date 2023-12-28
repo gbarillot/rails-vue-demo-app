@@ -31,11 +31,11 @@
       </div>
       <div class="col-xs-24 col-md-6 card">
         <h3>I18n</h3>
-        <!-- <p><a href="https://kazupon.github.io/vue-i18n/" target="_blank">
-          {{ $tc('dashboard.musicians', 0) }}, 
-          {{ $tc('dashboard.musicians', 1) }}, 
-          {{ store.metrics.musicians + ' ' + $tc('dashboard.musicians', store.metrics.musicians) }}</a>
-        </p> -->
+        <p><a href="https://kazupon.github.io/vue-i18n/" target="_blank">
+          {{ $t('dashboard.musicians', 0) }}, 
+          {{ $t('dashboard.musicians', 1) }}, 
+          {{ store.metrics.musicians + ' ' + $t('dashboard.musicians', store.metrics.musicians) }}</a>
+        </p> 
       </div>
       <div class="col-xs-24 col-md-6 card">
         <h3>ActionCable</h3>
@@ -58,6 +58,7 @@
 </template>
 
 <script setup>
+import { DashboardStore } from "@/admin/stores/dashboard_store.js";
 const store = DashboardStore();
 
 onMounted(() => {

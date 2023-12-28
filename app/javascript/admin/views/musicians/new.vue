@@ -22,7 +22,9 @@
 
 <script setup>
 import MusicianForm from "./_form.vue";
+import { MusicianStore } from "@/admin/stores/musician_store.js";
 const store = MusicianStore();
+
 const location = useRoute();
 
 const create = (event => {

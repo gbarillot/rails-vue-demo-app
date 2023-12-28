@@ -26,29 +26,22 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      availableLocales: window.I18n.availableLocales,
-      locale: window.I18n.locale
-    }
-  },
+<script setup>
+const location = useRoute();
+const { t } = useI18n({});
 
-  methods: {
-    activeOn(paths) {
-      return paths.includes(this.$route.name) ? 'active' : ''
-    }
-  },
+const availableLocales = ref(window.I18n.availableLocales);
+const locale = ref(window.I18n.locale);
 
-  watch: {
-    locale: function(locale) {
-      let redirectTo = `/${locale}${this.$route.path}`;
-      if(locale == this.availableLocales[0]) {
-        redirectTo = `${this.$route.path}`
-      }
-      window.location.href = redirectTo;
-    }
+const activeOn = ((paths) => {
+  return paths.includes(location.name) ? 'active' : ''
+})
+
+watch(locale, (newLocale, _oldLocale) => {
+  let redirectTo = `/${newLocale}${location.path}`;
+  if (newLocale === availableLocales.value[0]) {
+    redirectTo = `${location.path}`;
   }
-}
+  window.location.href = redirectTo;
+});
 </script>

@@ -23,36 +23,28 @@
         <p>All messages you type are upcased <b>server side</b> after a round trip. If you open multiple tabs, messages are broadcasted on all tabs.</p>
         
         <div v-if="messages.length > 0">
-          <p v-for="(mes, index) in messages" :key="index"><i>{{ mes }}</i></p>
+          <p v-for="(message, index) in messages" :key="index"><i>{{ message }}</i></p>
         </div>
         <div v-else>
           <p><i>Waiting for messages...</i></p>
-        </div>
+        </div> 
       </div>
     </div>
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      message: '',
-      messages: []
-    }
-  },
+<script setup>
+const messages = ref([]);
+const message = ref('');
 
-  created() {
-    this.$cable.on('chat', (event) => {
-      this.messages.unshift(event['message']);
-    })
-  },
+const publish = (() => {
+  // this.$cable.send(this.message);
+  // this.message = '';
+})
 
-  methods: {
-    publish() {
-      this.$cable.send(this.message);
-      this.message = '';
-    }
-  }
-}
+onMounted(() => {
+  // this.$cable.on('chat', (event) => {
+  //   this.messages.unshift(event['message']);
+  // })
+});
 </script>

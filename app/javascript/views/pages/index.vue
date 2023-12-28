@@ -11,25 +11,14 @@
   </section>
 </template>
 
-
-<script>
+<script setup>
 import { MusicianStore } from "@/stores/musician_store";
+const store = MusicianStore();
 
-export default {
-  setup() {
-    const store = MusicianStore();
-
-    return { store }
-  },
-
-  methods: {
-    unauthorized() {
-      this.$api.call(this.store.show('this-will-trigger-a-401'));        
-    },
-    crash() {
-      this.$api.call(this.store.show('this-will-trigger-a-500')); 
-    }
-  }
-
-}
+const unauthorized = (() => {
+  store.show('this-will-trigger-a-401');        
+})
+const crash = (() => {
+  store.show('this-will-trigger-a-500'); 
+})
 </script>

@@ -15,9 +15,10 @@
 </template>
 
 <script setup>  
-  const store = MusicianStore();
+import { MusicianStore } from "@/stores/musician_store.js";
+const store = MusicianStore();
 
-  onMounted(() => {
-    store.index()
-  });
+onMounted(() => {
+  store.index()
+});
 </script>

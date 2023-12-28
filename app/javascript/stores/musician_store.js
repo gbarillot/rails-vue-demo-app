@@ -3,21 +3,21 @@ import { defineStore } from 'pinia'
 export const MusicianStore = defineStore('musicians', {
   state: () => {
     return {
-      musician: {},
-      musicians: []
+      musicians: [],
+      musician: {}      
     }
   },
 
   actions: {
-    async index() {
-      return this.axios.get('/musicians').then(response => {      
+    async index(path) {
+      return this.Bpi.get('/musicians').then(response => {      
         this.musicians = response.data.musicians;
       })  
     },
     async show(id) {
-      return this.axios.get(`/musicians/${id}`).then(response => {      
+      return this.Bpi.get(`/musicians/${id}`).then(response => {      
         this.musician = response.data.musician;
       })  
     }
-  },
+  }
 })

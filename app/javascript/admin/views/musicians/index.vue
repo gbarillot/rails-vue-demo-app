@@ -43,17 +43,18 @@
 </template>
 
 <script setup>
-  import Filters from './_filters.vue';
+import Filters from './_filters.vue';
+import { MusicianStore } from "@/admin/stores/musician_store.js";
+const store = MusicianStore();
 
-  const store = MusicianStore();
-  const location = useRoute();
-  const { t } = useI18n({})
+const location = useRoute();
+const { t } = useI18n({})
 
-  const index = (event => {
-    store.index(location.fullPath)
-  });
+const index = (event => {
+  store.index(location.fullPath)
+});
 
-  onMounted(() => {
-    index(); 
-  });
+onMounted(() => {
+  index(); 
+});
 </script>
