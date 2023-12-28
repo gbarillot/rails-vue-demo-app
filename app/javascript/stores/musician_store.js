@@ -10,12 +10,12 @@ export const MusicianStore = defineStore('musicians', {
 
   actions: {
     async index(path) {
-      return this.Bpi.get('/musicians').then(response => {      
+      return this.Api.get('/musicians').then(response => {      
         this.musicians = response.data.musicians;
       })  
     },
     async show(id) {
-      return this.Bpi.get(`/musicians/${id}`).then(response => {      
+      return this.Api.get(`/musicians/${id}`).then(response => {      
         this.musician = response.data.musician;
       })  
     }

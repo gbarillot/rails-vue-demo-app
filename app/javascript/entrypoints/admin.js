@@ -9,14 +9,14 @@ import Axios from "axios";
 import { createCable } from '@/plugins/cable';
 const Cable = createCable({channel: 'ChatChannel'})
 
-// Form animations + Axios wrapper
-import { createBpi } from '@/plugins/bpi';
-const Bpi = createBpi({handler: Axios, namespace: '/admin'});
+// API + Axios wrapper
+import { createApi } from '@/plugins/api';
+const Api = createApi({handler: Axios, namespace: '/admin'});
 
 // Pinia + Axios setup
 import { createPinia } from 'pinia';
 const Pinia = createPinia();
-Pinia.use(({ store }) => { store.Bpi = Bpi })
+Pinia.use(({ store }) => { store.Api = Api })
 
 // I18n loader
 import { createI18n } from 'vue-i18n';

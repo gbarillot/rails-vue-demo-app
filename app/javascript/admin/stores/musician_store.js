@@ -14,7 +14,7 @@ export const MusicianStore = defineStore('musicians', {
 
   actions: {
     async index(path) {
-      return this.Bpi.get(path).then(response => {  
+      return this.Api.get(path).then(response => {  
         this.pagination = response.data.pagination;
         this.bands = response.data.bands;    
         this.musicians = response.data.musicians;        
@@ -23,14 +23,14 @@ export const MusicianStore = defineStore('musicians', {
     async new() {
       this.errors = {}; 
       this.musician = {};
-      return this.Bpi.get(`/musicians/new`).then(response => {             
+      return this.Api.get(`/musicians/new`).then(response => {             
         this.musician = response.data.musician;
       })  
     },
     async create() {
       this.errors = {};
       this.progress = 'loading';
-      return this.Bpi.post(`/musicians`, this.musician).then(response => {        
+      return this.Api.post(`/musicians`, this.musician).then(response => {        
         this.musician = response.data.musician;
         return true;
       }).catch(error => {
@@ -43,14 +43,14 @@ export const MusicianStore = defineStore('musicians', {
     async edit(id) {
       this.errors = {};
       this.musician = {};
-      return this.Bpi.get(`/musicians/${id}/edit`).then(response => {             
+      return this.Api.get(`/musicians/${id}/edit`).then(response => {             
         this.musician = response.data.musician;
       })  
     },
     async update(id) {
       this.errors = {};
       this.progress = 'loading';
-      return this.Bpi.put(`/musicians/${id}`, this.musician).then(response => {        
+      return this.Api.put(`/musicians/${id}`, this.musician).then(response => {        
         this.errors = {};
       }).catch(error => {
         this.errors = error.response.data.errors;
@@ -59,7 +59,7 @@ export const MusicianStore = defineStore('musicians', {
       })
     },
     async destroy(id) {      
-      return this.Bpi.destroy(`/musicians/${id}`).then(response => {  
+      return this.Api.destroy(`/musicians/${id}`).then(response => {  
         this.errors = {};      
       }).catch(error => {
         this.errors = error.response.data.errors;

@@ -1,37 +1,23 @@
-function Api() {}
+import Axios from "axios";
 
-Api.prototype.call = function(request, e) {
-  console.log('CALL')
-  let has_animation = null;
-  try {
-    e.classList.add('loading');
-    has_animation = true;
-  } catch(e) {
-    has_animation = false;
+function Api() {
+  const put = function(route, params) {
+    return Axios.put(route, params)
   }
   
-  return new Promise((resolve) => {
-    request.then((response) => {
-      if(has_animation === true) {
-        e.classList.remove('loading');
-        let status = null;
-        if(response === true)  { status = 'success' }
-        if(response === false) { status = 'failed' }
-  
-        e.classList.add(status);
-        setTimeout(function(){
-          e.classList.remove(status);
-        }, 1000) 
-      }
+  const post = function(route, params) {
+    return Axios.post(route, params)
+  }
 
-      resolve(response);
-    })
-  })
-}
+  const get = function(route) {
+    return Axios.get(route);
+  }
 
-Api.prototype.install = function (app) {
-  app.plugin = this;
-  app.config.globalProperties.$api = this;
+  const destroy = function(route) {
+    return Axios.delete(route);
+  }
+
+  return {get, post, put, destroy};
 }
 
 export function createApi(args) {
