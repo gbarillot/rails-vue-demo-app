@@ -1,6 +1,6 @@
 class Api::Admin::MusiciansController < Api::Admin::AdminController
   # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
-  #before_action :slow if Rails.env == 'development'
+  before_action :slow, only: [:create, :update] 
   before_action :load_musician, except: [:index, :new, :create]  
 
   def index
@@ -57,6 +57,6 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
   end
 
   def slow
-    sleep 2
+    sleep 1
   end
 end
