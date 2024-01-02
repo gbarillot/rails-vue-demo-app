@@ -77,9 +77,9 @@ Pros:
 Cons:
 - Don't forget to disable caching in dev.
 - Works only on latest browsers
-- Still some questions about deploys in the wild and caching...
+- Still some questions about deploys and caching in the wild...
 
-As of 2024-01-02 it is still an **experiment**, feel free to move back to Sprocket.
+As of 2024-01-02 it is still an cutting edge **experiment**, feel free to move back to Sprocket.
 
 ## Contributions
 
