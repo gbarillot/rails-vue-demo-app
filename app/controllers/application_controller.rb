@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
+  def after_sign_in_path_for(resource) 
+    admin_root_path
+  end
+
   private
   def render_error(e)
     if e.class.name == "ActiveRecord::RecordNotFound"

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       end
     end
 
-    get '/admin', to: 'admin#index'
+    get '/admin', to: 'admin#index', as: 'admin_root'
     match "/admin/*path", to: "admin#index", format: false, via: :get
 
     root :to => "application#index"
