@@ -1,27 +1,27 @@
 <template>  
-  <section>
-    <a href="#" @click.prevent="toggleForm">&nbsp;{{ $t('filter') }}</a>
+  <section class="filters">
+    <a href="#" @click.prevent="toggleForm" class="openable">{{ $t('filter') }}</a>
 
     <form @submit.prevent="search" ref="filters" accept-charset="UTF-8" class="card hidden">  
       <div class="row">      
-        <div class="col-xs-24 col-md-10"> 
+        <div class="col-xs-12 col-md-6 col-xl-5"> 
           <label>{{ $t('musicians.form.name') }}</label>    
           <input type="text" v-model="form.name_cont" placeholder="name">
         </div>  
-        <div class="col-xs-24 col-md-10">     
+        <div class="col-xs-12 col-md-6 col-xl-4">     
           <label>{{ $t('musicians.form.band') }}</label>
           <select v-model="form.band_eq">
             <option :value="null">{{ $t('any') }}</option>
             <option v-for="band in bands" :key="band.key" :value="band.key">{{ band.name }}</option>
           </select>
         </div> 
-      </div>
-      <div class="row">
-        <div class="col-xs-24 col-md-5">
+        
+        <div class="col-xs-12 col-md-2 col-xl-3">
+          <label class="hidden-sm hidden-md hidden-lg">&nbsp;</label>
           <input type="submit" role="button" class="button button-primary" :value="$t('filter')">
         </div>
-        <div class="col-xs-24 col-md-5">
-          <a @click="reset" href="#" role="button" class="secondary outline fill">{{ $t('reset_filters') }}</a>
+        <div class="col-xs-12 col-md-5">
+          <a @click="reset" href="#" class="secondary outline fill">{{ $t('reset_filters') }}</a>
         </div>  
       </div>      
     </form>
@@ -42,8 +42,9 @@ const form = () => {
   } 
 }
 
-const toggleForm = () => {
-  filters.value.classList.toggle('hidden');
+const toggleForm = (e) => {
+  e.target.classList.toggle('open');
+  filters.value.classList.toggle('hidden');  
 }
 
 const search = () => {

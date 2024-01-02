@@ -6,7 +6,7 @@
     </ul>
 
     <div class="row">
-      <div class="col-xs-24 col-sm-12 card">
+      <div class="col-xs-12 col-sm-6 card">
         <form @submit.prevent="publish" accept-charset="UTF-8">
           <input type="input" v-model="message" placeholder="Type in a message" />
           <br /><br />
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <div class="col-xs-24 col-sm-12 card">
+      <div class="col-xs-12 col-sm-6 card">
         <p>All messages you type are upcased <b>server side</b> after a round trip. If you open multiple tabs, messages are broadcasted on all tabs.</p>
         
         <div v-if="messages.length > 0">
@@ -36,15 +36,16 @@
 <script setup>
 const messages = ref([]);
 const message = ref('');
+const cable = inject('cable')
 
 const publish = (() => {
-  // this.$cable.send(this.message);
-  // this.message = '';
+  cable.send(message.value);
+  message.value = '';
 })
 
 onMounted(() => {
-  // this.$cable.on('chat', (event) => {
-  //   this.messages.unshift(event['message']);
-  // })
+  cable.on('chat', (event) => {
+    messages.value.unshift(event['message']);
+  })
 });
 </script>

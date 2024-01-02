@@ -2,7 +2,7 @@
   <section class="top-nav">
     <div class="container">
       <div class="row">
-        <div class="col-md-16 col-lg-21">
+        <div class="col-xs-8 col-sm-9">
           <nav>
             <ul>
               <li :class="activeOn(['root_path', 'musicians_path', 'musician_path'])">
@@ -14,7 +14,7 @@
             </ul>
           </nav>
         </div>
-        <div class="col-md-8 col-lg-3">
+        <div class="col-xs-4 col-sm-3">
           <select v-model="locale">
             <option v-for="locale in availableLocales" :value="locale" :key="locale">
               {{ locale.toUpperCase() }}
@@ -23,6 +23,7 @@
         </div>
       </div>
     </div>
+
   </section>
 </template>
 

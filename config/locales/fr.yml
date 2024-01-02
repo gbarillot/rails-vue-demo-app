@@ -6,6 +6,8 @@ fr:
     rolling_stones: "The Rolling Stones"
     beatles: "The Beatles"
     acdc: "AC/DC"
+  devise:
+    sign_in: "Authentification"
   vue:
     front:
       title: "Front end"
@@ -55,6 +57,10 @@ fr:
           band: "Groupe"
       confirm: "Etes-vous sur ?"
   activerecord:
+    attributes:        
+      user:
+        email: "Adresse Email"
+        password: "Mot de passe"
     errors:
       models:
         musician:

@@ -2,7 +2,7 @@
   <section class="top-nav">
     <div class="container">
       <div class="row">
-        <div class="col-md-16 col-lg-21">
+        <div class="col-xs-12 col-lg-10">
           <nav>
             <ul>
               <li :class="activeOn(['root_path'])">
@@ -15,12 +15,12 @@
                 <router-link :to="{name: 'websockets_path'}">{{ $t('nav.websockets') }}</router-link>
               </li>
               <li>
-                <a href="/users/sign_out">{{ $t('nav.logout') }}</a>
+                <a :href="'/' + localePrefix() + 'users/sign_out'">{{ $t('nav.logout') }}</a>
               </li>
             </ul>
           </nav>
         </div>
-        <div class="col-md-8 col-lg-3">
+        <div class="col-xs-12 col-lg-2 hidden-xs hidden-sm hidden-md">
           <select v-model="locale">
             <option v-for="locale in availableLocales" :value="locale" :key="locale">
               {{ locale.toUpperCase() }}
@@ -41,6 +41,9 @@ const locale = ref(window.I18n.locale);
 
 const activeOn = ((paths) => {
   return paths.includes(location.name) ? 'active' : ''
+})
+const localePrefix = ((paths) => {
+  return window.I18n.prefix;
 })
 
 watch(locale, (newLocale, _oldLocale) => {

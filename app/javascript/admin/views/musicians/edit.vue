@@ -10,12 +10,13 @@
       <MusicianForm :data="store" /> 
 
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10 hidden-xs">
           <a @click="destroy" href="#" role="button" class="secondary outline">{{ $t('delete') }}</a> 
         </div>
-        <div class="col-sm-4 col-start-sm-21">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ta-right">
           <input type="submit" :value="$t('save')" />      
         </div>
+        <a @click="destroy" href="#" class="visible-xs">{{ $t('delete') }}</a>
       </div>
     </form>
   

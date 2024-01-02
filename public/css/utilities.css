@@ -1,0 +1,33 @@
+.hidden {
+  display: none;
+}
+.ta-left {
+  text-align: left;
+}
+.ta-center {
+  text-align: center;
+}
+.ta-right {
+  text-align: right;
+}
+.openable {
+  position: relative;
+  padding-left: 20px;
+  &:before {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border: solid black;
+    content: '';
+    border-width: 0 1px 1px 0;
+    transform: rotate(-45deg);
+    margin-right: 10px;
+    position: absolute;
+    top: 7px;
+    left: 0;
+  }
+  &.open:before {
+    top: 5px;
+    transform: rotate(45deg);
+  }
+}

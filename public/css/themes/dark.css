@@ -1,0 +1,8 @@
+[data-theme="dark"] {
+  --body-bg: #000;
+  --title-color: #fff;
+  --text-color: #ddd;
+  --light-text-color: #666; 
+  --accent: rgb(37, 45, 52); 
+  --border-active: #fffe;
+}

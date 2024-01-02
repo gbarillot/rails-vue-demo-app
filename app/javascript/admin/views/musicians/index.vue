@@ -1,14 +1,14 @@
 <template>
   <section class="container">
     <div class="row">
-      <div class="col-xs-12">      
+      <div class="col-xs-12 col-lg-8 col-xl-9">      
         <ul class="breadcrumb">
           <li><router-link :to="{name: 'root_path'}">{{ $t('title') }}</router-link></li>
           <li>{{ $t('nav.musicians') }}</li>
         </ul>
       </div>
-      <div class="col-xs-12 ta-right">
-        <router-link :to="{name: 'new_musician_path'}" role="button" class="outline">{{ $t('musicians.create') }}</router-link> 
+      <div class="col-xs-12 col-lg-4 col-xl-3 ta-right">
+        <router-link :to="{name: 'new_musician_path'}" role="button" class="outline" style="width: 100%">{{ $t('musicians.create') }}</router-link> 
       </div>
     </div>
 
@@ -38,19 +38,23 @@
       <pagination v-if="store.pagination" :store="store" @clicked="index"></pagination>
     </div>
 
-    <p>This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the "slow" method in Api::Admin::MusiciansController to use the app at full speed</p>
+    <div class="row">
+      <div class="col-xs-12">
+        <p>This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the "slow" method in Api::Admin::MusiciansController to use the app at full speed</p>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup>
 import Filters from './_filters.vue';
+import Pagination from '../shared/_pagination.vue';
+
 import { MusicianStore } from "@/admin/stores/musician_store.js";
 const store = MusicianStore();
 
 const location = useRoute();
-const { t } = useI18n({})
-
-const index = (event => {
+const index = (event => {  
   store.index(location.fullPath)
 });
 

@@ -1,0 +1,8 @@
+[data-theme="light"] {
+  --body-bg: #f5f5f5;
+  --title-color: #333;
+  --text-color: #666;
+  --light-text-color: #999; 
+  --accent: #fff; 
+  --border-active: blue;
+}

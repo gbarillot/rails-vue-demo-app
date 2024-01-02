@@ -18,7 +18,7 @@ Cable.prototype.send = function(message) {
 
 Cable.prototype.install = function(app) {
   app.plugin = this;
-  app.config.globalProperties.$cable = this;
+  app.provide('cable', this)
 }
 
 export function createCable(options) {

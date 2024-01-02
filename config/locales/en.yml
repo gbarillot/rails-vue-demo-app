@@ -6,6 +6,8 @@ en:
     rolling_stones: "The Rolling Stones"
     beatles: "The Beatles"
     acdc: "AC/DC"
+  devise:
+    sign_in: "Sign in"
   vue:
     front:
       title: "Front end"
@@ -55,6 +57,10 @@ en:
           band: "Band"
       confirm: "Are you sure?"
   activerecord:
+    attributes:        
+      user:
+        email: "Email address"
+        password: "Password"
     errors:
       models:
         musician:

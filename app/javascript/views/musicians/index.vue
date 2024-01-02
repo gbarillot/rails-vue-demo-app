@@ -7,7 +7,7 @@
     </ul>
 
     <div class="row">
-      <div v-for="musician in store.musicians" :key="musician.id" class="col-xs-24 col-md-6 card">
+      <div v-for="musician in store.musicians" :key="musician.id" class="col-xs-12 col-md-3 card">
         <router-link :to="{ name: 'musician_path', params: {id: musician.id}}">{{ musician.name }}</router-link>
       </div>
     </div>

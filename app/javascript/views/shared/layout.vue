@@ -1,11 +1,12 @@
 <template>    
-  <div>
-    <nav-bar />
+  <main>
+    <nav-bar /> 
     <router-view />
-  </div>
+  </main>  
+  <bottom />
 </template>
-
 
 <script setup>
 import NavBar from './_nav.vue';
+import Bottom from './_footer.vue';
 </script>

@@ -1,0 +1,15 @@
+.devise {
+  > .row {
+    margin-top: 50px;
+    @media (min-width: 576px) and (max-width: 991px) {
+      > div {
+        grid-column: 2/span 10 !important;
+      }
+    }
+    @media (min-width: 992px) {
+      > div {
+        grid-column: 4/span 6 !important;
+      }
+    }
+  }
+}

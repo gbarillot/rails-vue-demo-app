@@ -7,7 +7,7 @@
     <p><a @click.prevent="unauthorized" href="#">{{ $t('pages.server_401') }}</a></p>
     <p><a @click.prevent="crash" href="#">{{ $t('pages.server_500') }}</a></p>
     <br />
-    <p><a href="/admin">{{ $t('pages.admin_link') }}</a></p>
+    <b><a href="admin">{{ $t('pages.admin_link') }}</a></b>
   </section>
 </template>
 

@@ -1,18 +1,15 @@
 import Axios from "axios";
 
 function Api() {
-  const put = function(route, params) {
-    return Axios.put(route, params)
-  }
-  
-  const post = function(route, params) {
-    return Axios.post(route, params)
-  }
-
   const get = function(route) {
     return Axios.get(route);
   }
-
+  const post = function(route, params) {
+    return Axios.post(route, params)
+  }
+  const put = function(route, params) {
+    return Axios.put(route, params)
+  }
   const destroy = function(route) {
     return Axios.delete(route);
   }
