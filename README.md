@@ -79,7 +79,7 @@ Cons:
 - Works only on latest browsers
 - Still some questions about deploys and caching in the wild...
 
-As of 2024-01-02 it is still an cutting edge **experiment**, feel free to move back to Sprocket.
+As of 2024-01-02 it is still a cutting edge **experiment**, feel free to move back to Sprocket.
 
 ## Contributions
 
