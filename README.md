@@ -22,8 +22,9 @@ available on the Rails6 branch.
 A lot of things has been updated/rewrote for this version, notably:
 
 - Webpacker is now replaced by Vite
-- No longer depends on JQuery for API calls (replaced by Axios)
+- Vue app in using Composition API 
 - Vuex is now replaced by Pinia to handle state management
+- No longer depends on JQuery for API calls (replaced by Axios)
 
 Nonetheless, a lot of opinions and conventions from the previous version remain valid, you may have a look at the original blog post for details (https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/). 
 
@@ -63,6 +64,22 @@ rails test
 ```
 yarn test
 ```
+
+## Important note on CSS!
+The main branch is **experimenting** a [#NoBuild](https://world.hey.com/dhh/you-can-t-get-faster-than-no-build-7a44131c) approach, dropping the regular Sprockets asset pipeline
+and moving back to a good ol' /public/css directory. 
+
+Pros:
+- No compile time, greatly speed up page load time in dev!
+- Easier to copy/paste from browser console to .css files
+- Easier / more fexible to manage imports
+
+Cons:
+- Don't forget to disable caching in dev.
+- Works only on latest browsers
+- Still some questions about deploys in the wild and caching...
+
+As of 2024-01-02 it is still an **experiment**, feel free to move back to Sprocket.
 
 ## Contributions
 
