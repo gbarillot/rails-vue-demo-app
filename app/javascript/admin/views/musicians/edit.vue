@@ -19,7 +19,12 @@
         <a @click="destroy" href="#" class="visible-xs">{{ $t('delete') }}</a>
       </div>
     </form>
-  
+ 
+    <div class="row">
+      <div class="col-xs-12">
+        <p>{{ $t('musicians.comment') }}</p>
+      </div>
+    </div>
   </section>
 </template>
 

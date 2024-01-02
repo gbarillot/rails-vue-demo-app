@@ -50,12 +50,22 @@ fr:
         musicians: "Aucun musician | Un musicien | musiciens" 
       musicians:
         create: "+ Ajouter un musicien"
-        new: "Nouveau musicien"
+        new: "Nouveau musicien"        
         form:
           id: "Id"
           name: "Nom"
-          band: "Groupe"
+          band: "Groupe"   
+        comment: "This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MusiciansController to use the app at full speed"     
       confirm: "Etes-vous sur ?"
+      websockets: 
+        placeholder: "Tapez un message..."
+        publish: "Publier"
+        comment1: "Vous pouvez aussi publier un message depuis la console Rails :"
+        code_example: "ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })"
+        comment2: "Tous les messages que vous publiez sont passés en majuscule"
+        server_side: " côté serveur. "
+        comment3: "Si vous ouvrez plusieurs onglets, les messages seront en majuscules sur chacun d'eux."
+        waiting_messages: "En attente de messages..."
   activerecord:
     attributes:        
       user:

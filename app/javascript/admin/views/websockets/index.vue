@@ -8,25 +8,28 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 card">
         <form @submit.prevent="publish" accept-charset="UTF-8">
-          <input type="input" v-model="message" placeholder="Type in a message" />
+          <input type="input" v-model="message" :placeholder="$t('websockets.placeholder')" />
           <br /><br />
-          <input type="submit" value="Publish" />
+          <input type="submit" :value="$t('websockets.publish')" />
         </form>
 
         <div class="card">
-          <p>You can also push messages here from the server using the Rails console:</p>
-          <code>ActionCable.server.broadcast("ChatChannel", { message: "hey!" })</code>
+          <p>{{ $t('websockets.comment1') }}</p>
+          <code>{{ $t('websockets.code_example') }}</code>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-6 card">
-        <p>All messages you type are upcased <b>server side</b> after a round trip. If you open multiple tabs, messages are broadcasted on all tabs.</p>
+        <p>{{ $t('websockets.comment2') }}
+           <b>{{ $t('websockets.server_side') }}</b>
+           {{ $t('websockets.comment3') }}
+        </p>
         
         <div v-if="messages.length > 0">
           <p v-for="(message, index) in messages" :key="index"><i>{{ message }}</i></p>
         </div>
         <div v-else>
-          <p><i>Waiting for messages...</i></p>
+          <p><i>{{ $t('websockets.waiting_messages') }}</i></p>
         </div> 
       </div>
     </div>

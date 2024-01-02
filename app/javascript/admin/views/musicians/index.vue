@@ -37,12 +37,6 @@
 
       <pagination v-if="store.pagination" :store="store" @clicked="index"></pagination>
     </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <p>This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the "slow" method in Api::Admin::MusiciansController to use the app at full speed</p>
-      </div>
-    </div>
   </section>
 </template>
 

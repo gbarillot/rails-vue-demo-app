@@ -36,6 +36,7 @@ p, span, li, table, tr, td, th, label {
     list-style-type: none;
     display: inline-block;
     padding-top: 5px;
+    color: var(--light-text-color);
   }
   li:after {
     content: '/';
@@ -90,6 +91,5 @@ footer {
     * {
       text-align: center !important;
     }
-    
   }
 }

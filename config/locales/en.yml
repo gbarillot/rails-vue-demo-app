@@ -55,7 +55,17 @@ en:
           id: "Id"
           name: "Name"
           band: "Band"
+        comment: "This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MusiciansController to use the app at full speed"     
       confirm: "Are you sure?"
+      websockets: 
+        placeholder: "Type your message..."
+        publish: "Publish"
+        comment1: "You can also publish straight out from the Rails console:"
+        code_example: "ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })"
+        comment2: "All messages are upcased"
+        server_side: " server side. "
+        comment3: "If you open up multiple tabs, you messsages will be upcased in each of these tabs"
+        waiting_messages: "Waiting for messages..."
   activerecord:
     attributes:        
       user:

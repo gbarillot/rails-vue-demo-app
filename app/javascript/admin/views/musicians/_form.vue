@@ -11,7 +11,7 @@
     <select v-model="data.musician.band" :aria-invalid="data.errors.band ? true : ''">
       <option v-for="band in data.musician.bands" :key="band.key" :value="band.key">{{ band.name }}</option>
     </select>
-  </fieldset>       
+  </fieldset>     
 </template>
 
 <script setup>
