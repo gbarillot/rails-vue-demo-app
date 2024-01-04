@@ -22,7 +22,7 @@ Rails.logger.level = 5
 Dir[Rails.root.join('test/support/**/*.rb')].each { |f| require f }
 
 class ActiveSupport::TestCase
-  extend Minitest::Spec::DSL 
+  #extend Minitest::Spec::DSL 
   parallelize(workers: 1)
   ActiveJob::Base.queue_adapter = :test
 

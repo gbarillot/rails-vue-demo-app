@@ -16,7 +16,6 @@ gem 'route_translator'
 gem 'kaminari'
 gem 'ransack'
 gem 'devise'
-gem 'sassc-rails'
 gem 'cypress-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -36,6 +35,7 @@ group :test do
   gem 'capybara'
   gem 'minitest'
   gem 'minitest-rails'
+  gem 'minitest-spec-rails'
   gem 'minitest-focus'
   gem 'minitest-matchers'
   gem 'minitest-metadata'
