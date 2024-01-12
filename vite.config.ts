@@ -24,6 +24,10 @@ export default defineConfig({
     vue()
   ],
   server: {
-    hmr: true
-  },
+    hmr: {
+      host: "localhost",
+      port: 3036,
+      protocol: "ws"
+    },
+  }
 })

@@ -3,7 +3,6 @@ import { createWebHistory, createRouter } from 'vue-router'
 import PageIndex from '@/views/pages/index.vue';
 import MusicianIndex from '@/views/musicians/index.vue';
 import MusicianShow from '@/views/musicians/show.vue';
-import Error404 from '@/views/pages/error_404.vue';
 
 const router = createRouter({
   history: createWebHistory(`/${I18n.prefix}`),
@@ -12,10 +11,16 @@ const router = createRouter({
     { path: '/pages', component: PageIndex, name: 'pages_path' },
     { path: '/musicians', component: MusicianIndex, name: 'musicians_path' },
     { path: '/musicians/:id', component: MusicianShow, name: 'musician_path' },
-    { path: '/404', component: Error404 },
-    
-    { path: '/:catchAll(.*)', redirect: '/404' }
   ]
+});
+
+// Handles 404 Not found
+router.beforeEach((to, from, next) => {
+  if (!to.matched.length) {
+    window.location.href = '/404'
+  } else {
+    next();
+  }
 });
 
 export default router;
