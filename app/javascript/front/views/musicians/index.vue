@@ -15,7 +15,7 @@
 </template>
 
 <script setup>  
-import { MusicianStore } from "@/stores/musician_store.js";
+import { MusicianStore } from "../../stores/musician_store.js";
 const store = MusicianStore();
 
 onMounted(() => {

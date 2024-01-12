@@ -8,5 +8,5 @@
 
 <script setup>
 import NavBar from './_nav.vue';
-import Bottom from '@/views/shared/_footer.vue';
+import Bottom from './_footer.vue';
 </script>

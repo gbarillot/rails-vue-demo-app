@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { MusicianStore } from "@/stores/musician_store";
+import { MusicianStore } from "../../stores/musician_store";
 const store = MusicianStore();
 
 const unauthorized = (() => {

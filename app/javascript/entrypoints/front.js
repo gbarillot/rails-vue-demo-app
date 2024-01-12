@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 const app = createApp(Layout);
 
-import Router from '@/routes.js';
-import Layout from '@/views/shared/layout.vue';
+import Router from '@/front/routes.js';
+import Layout from '@/front/views/shared/layout.vue';
 import Axios from "axios";
 
 // API + Axios wrapper

@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-import PageIndex from '@/views/pages/index.vue';
-import MusicianIndex from '@/views/musicians/index.vue';
-import MusicianShow from '@/views/musicians/show.vue';
+import PageIndex from './views/pages/index.vue';
+import MusicianIndex from './views/musicians/index.vue';
+import MusicianShow from './views/musicians/show.vue';
 
 const router = createRouter({
   history: createWebHistory(`/${I18n.prefix}`),
