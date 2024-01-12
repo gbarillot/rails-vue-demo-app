@@ -31,11 +31,10 @@
 <script setup>
 import MusicianForm from "./_form.vue";
 import { MusicianStore } from "@/admin/stores/musician_store.js";
-const store = MusicianStore();
 
+const store = MusicianStore();
 const router = useRouter();
 const location = useRoute();
-const { t } = useI18n({});
 
 const update = (event => {
   store.update(location.params.id);

@@ -61,7 +61,9 @@ fr:
         placeholder: "Tapez un message..."
         publish: "Publier"
         comment1: "Vous pouvez aussi publier un message depuis la console Rails :"
-        code_example: "ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })"
+        # Beware of string containing: {} @ $ |
+        # See: https://vue-i18n.intlify.dev/guide/essentials/syntax#special-characters
+        code_example: "{'ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })'}"
         comment2: "Tous les messages que vous publiez sont passés en majuscule"
         server_side: " côté serveur. "
         comment3: "Si vous ouvrez plusieurs onglets, les messages seront en majuscules sur chacun d'eux."

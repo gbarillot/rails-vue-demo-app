@@ -61,7 +61,9 @@ en:
         placeholder: "Type your message..."
         publish: "Publish"
         comment1: "You can also publish straight out from the Rails console:"
-        code_example: "ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })"
+        # Beware of string containing: {} @ $ |
+        # See: https://vue-i18n.intlify.dev/guide/essentials/syntax#special-characters
+        code_example: "{'ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })'}"
         comment2: "All messages are upcased"
         server_side: " server side. "
         comment3: "If you open up multiple tabs, you messsages will be upcased in each of these tabs"
