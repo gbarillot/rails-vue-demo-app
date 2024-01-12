@@ -65,21 +65,20 @@ rails test
 yarn test
 ```
 
-## Important note on CSS!
-The main branch is **experimenting** a [#NoBuild](https://world.hey.com/dhh/you-can-t-get-faster-than-no-build-7a44131c) approach, dropping the regular Sprockets asset pipeline
-and moving back to a good ol' /public/css directory. 
+## A note on CSS
+CSS is done right in the public/css/development directory.
 
 Pros:
-- No compile time, greatly speed up page load time in dev!
-- Easier to copy/paste from browser console to .css files
+- No compile time, greatly speed up page load time in dev
+- Allows CSS editing + saving directly from Chrome Devtools
 - Easier / more fexible to manage imports
 
 Cons:
-- Don't forget to disable caching in dev.
-- Works only on latest browsers
-- Still some questions about deploys and caching in the wild...
+- You should disable cache in DevTools in Dev
+- As of today, not suitable for production!
 
-As of 2024-01-02 it is still a cutting edge **experiment**, feel free to move back to Sprocket.
+The purpose of this repo is Vue + Vite + Rails, not CSS, so feel free to use whatever method 
+you'd prefer to handle CSS. Sprocket is left as is and still works.
 
 ## Contributions
 

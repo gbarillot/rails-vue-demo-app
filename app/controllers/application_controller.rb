@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   around_action :set_locale_from_url
-  rescue_from Exception, with: :render_error
+  #rescue_from Exception, with: :render_error
 
   def index
     render template: 'application'

@@ -18,21 +18,4 @@ module ApplicationHelper
       count:    collection.total_count
     }
   end
-
-  def stylesheet_tag(file_name)
-    target = "/css/development/#{file_name}" 
-
-    if Rails.env.production? 
-      # TODO: identify best way to figure out if compilation needed or not before serving cache
-      app_path = Rails.root.join('public', 'css')
-      out_base_name = "#{file_name.split('.css').first}"
-
-      out_name = "#{out_base_name}-#{Time.now.to_i}.css"
-      out_path = app_path.join('production', out_name)
-      `npx lightningcss --minify --bundle --targets '>= 0.25%' #{app_path.join(file_name)} -o #{out_path}` 
-      target = "/css/production/#{out_name}"
-    end
-  
-    "<link rel=\"stylesheet\" href=\"#{target}\">".html_safe
-  end
 end
