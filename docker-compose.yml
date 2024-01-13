@@ -15,7 +15,7 @@ services:
       context: .
     image: 'rails-vue-demo-app'
     working_dir: /app
-    command: sh -c "rm -rf tmp/pids && foreman start"
+    command: sh -c "yarn install && rm -rf tmp/pids && export REDIS_URL='redis' && foreman start"
     volumes:
       - type: bind
         source: .
