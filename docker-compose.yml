@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  redis:
+    image: 'redis:5-alpine'
+    command: redis-server
+    ports:
+      - 6379:6379
+  
+  web:
+    build:
+      context: .
+    image: 'rails-vue-demo-app'
+    working_dir: /app
+    command: sh -c "rm -rf tmp/pids && foreman start"
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    ports:
+      - 3000:3000
+      - 3036:3036
