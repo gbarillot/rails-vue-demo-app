@@ -1,11 +1,15 @@
 version: "3.9"
+
 services:
   redis:
-    image: 'redis:5-alpine'
+    image: 'redis'
+    restart: always
     command: redis-server
     ports:
       - 6379:6379
-  
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+
   web:
     build:
       context: .
