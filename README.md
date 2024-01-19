@@ -1,5 +1,8 @@
 # Rails + Vite + Vue + Pina Demo App
 
+### This repo is not longer maintained 
+Feel free to grab some ideas, but I will no longer update this codebase. 
+
 ## Description
 
 Demo Single Page Application based on Ruby on Rails 7.0.2, using Vue 3 + Pina, compiled with Vite.
