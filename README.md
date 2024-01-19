@@ -1,6 +1,6 @@
 # Rails + Vite + Vue + Pina Demo App
 
-### This repo is not longer maintained 
+### This repo is no longer maintained 
 Feel free to grab some ideas, but I will no longer update this codebase. 
 
 ## Description
