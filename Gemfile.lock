@@ -156,13 +156,6 @@ GEM
     minitest (5.20.0)
     minitest-focus (1.4.0)
       minitest (>= 4, < 6)
-    minitest-matchers (1.4.1)
-      minitest (~> 5.0)
-    minitest-metadata (0.6.0)
-      minitest (>= 4.7, < 6.0)
-    minitest-profiler (0.0.2)
-      activesupport (>= 4.1.0)
-      minitest (>= 5.3.3)
     minitest-rails (7.1.0)
       minitest (~> 5.20)
       railties (~> 7.1.0)
@@ -325,9 +318,6 @@ DEPENDENCIES
   kaminari
   minitest
   minitest-focus
-  minitest-matchers
-  minitest-metadata
-  minitest-profiler
   minitest-rails
   minitest-spec-rails
   puma

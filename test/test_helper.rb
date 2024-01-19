@@ -8,8 +8,6 @@ require 'rack/test'
 require 'capybara/rails'
 require 'minitest'
 require 'minitest/rails'
-#require 'minitest/spec'
-require 'minitest/matchers'
 require 'minitest-metadata'
 require 'capybara/email'
 require 'json-schema'
@@ -22,16 +20,11 @@ Rails.logger.level = 5
 Dir[Rails.root.join('test/support/**/*.rb')].each { |f| require f }
 
 class ActiveSupport::TestCase
-  #extend Minitest::Spec::DSL 
   parallelize(workers: 1)
   ActiveJob::Base.queue_adapter = :test
 
   fixtures :all
   self.use_transactional_tests = true
-
-  # register_spec_type(self) do |desc|
-  #   desc < ActiveRecord::Base if desc.is_a?(Class)
-  # end
 
   def json_response
     JSON.parse(response.body)
